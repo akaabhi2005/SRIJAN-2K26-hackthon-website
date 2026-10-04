@@ -34,7 +34,7 @@ const pinned = (root: HTMLElement) => {
   const story = root.closest<HTMLElement>('.story');
   if (!frame || !story || getComputedStyle(frame).position !== 'absolute') return null;
   const stage = frame.parentElement as HTMLElement;
-  const F = (story.offsetHeight - stage.offsetHeight) / 6;
+  const F = (story.offsetHeight - stage.offsetHeight) / 5;
   const fi = +(frame.style.getPropertyValue('--fi') || 0);
   const top = story.getBoundingClientRect().top + scrollY;
   return { a: top + (fi + 0.1) * F, len: 0.36 * F };

@@ -23,7 +23,7 @@ export function initChip() {
   let g: { dx: number; dy: number; s: number } | null = null;
   // Geometry from layout offsets (immune to the transform we apply) + the chip's fixed rect. Recomputed on resize, font load, size changes.
   const measure = () => {
-    F = (story.offsetHeight - (stage?.offsetHeight ?? 0)) / 6 || 0.9 * innerHeight;
+    F = (story.offsetHeight - (stage?.offsetHeight ?? 0)) / 5 || 0.9 * innerHeight;
     if (!canFly || !stage || !clock) { g = null; return; }
     let x = 0, y = 0, e: HTMLElement | null = clock;
     for (; e && e !== stage; e = e.offsetParent as HTMLElement | null) { x += e.offsetLeft; y += e.offsetTop; }

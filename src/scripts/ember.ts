@@ -6,7 +6,7 @@ const ctx = canvas?.getContext('2d', { alpha: false });
 if (canvas && ctx) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarse = matchMedia('(pointer: coarse)').matches || Math.min(screen.width, screen.height) <= 600;
-  const COUNT = 80, PEAK = 0.34, RANGE = 170, PULL = 260; // PULL = max px/s^2 toward the pointer
+  const COUNT = coarse ? 32 : 80, PEAK = 0.34, RANGE = 170, PULL = 260; // PULL = max px/s^2 toward the pointer
   const BG = '#0a0a0a';
   let W = 0, H = 0, dpr = 1;
   const grid = document.createElement('canvas'); // static grid, redrawn only on resize
@@ -79,7 +79,8 @@ if (canvas && ctx) {
     addEventListener('resize', () => { clearTimeout(rt); rt = window.setTimeout(size, 150); });
     const tick = (ms: number) => {
       raf = requestAnimationFrame(tick);
-      const dt = Math.min(.033, (ms - last) / 1000 || .016); last = ms; t += dt; // delta-time clamp
+      if (coarse && ms - last < 1000 / 30) return;
+      const dt = Math.min(.05, (ms - last) / 1000 || .016); last = ms; t += dt; // delta-time clamp
       frame(t);
       for (const p of ps) {
         p.age += dt;

@@ -16,8 +16,8 @@
 
 /* frames: static layout */
 .frame { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 3.5rem; border-top: 1px solid var(--line); }
-.f1 { border-top: 0; min-height: calc(100svh - 4rem); padding-block: 2.5rem 3.5rem; }
-@media (max-width: 767px) { .f1 { padding-block: 2.5rem calc(3.5rem + 46px); /* +46px: the 44px skip strip pushes the stage bottom below the fold; keep the centred hero content above it */ } }
+.f1 { border-top: 0; min-height: calc(100svh - 4rem); padding-block: clamp(2.2rem, 5vw, 4rem) 3.5rem; }
+@media (max-width: 767px) { .f1 { padding-block: 2rem calc(3.5rem + 46px); } }
 .frame > .in, .f-copy, .doms, .steps5 { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--pad); }
 .kicker { font-size: .8rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--orange-hi); }
 .line { font-size: clamp(2.2rem, 8vw, 5rem); margin-top: .4rem; }
@@ -38,9 +38,122 @@
 .f5 .f-art svg { width: auto; max-width: 100%; margin-inline: auto; }
 
 /* frame 1 */
+.sketch-hero-container {
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center;
+  width: 100%; max-width: min(68rem, 88vw) !important; margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.5rem) !important;
+  padding-top: clamp(1rem, 2.5vw, 2.25rem);
+  min-height: min(78svh, 46rem);
+}
+.hero-top-timer { margin-top: 0.5rem; margin-bottom: 1.5rem; display: flex; justify-content: center; width: 100%; }
+.hero-top-timer .regline {
+  background: linear-gradient(135deg, rgba(20, 22, 28, 0.95), rgba(10, 10, 14, 0.98));
+  border: 1px solid rgba(255, 91, 0, 0.45);
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 91, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.hero-title-sketch { width: 100%; max-width: min(80rem, 92vw) !important; margin-inline: auto; padding-inline: clamp(1rem, 2.5vw, 2.2rem) !important; }
+.hero-title-svg { width: 100%; height: auto; display: block; margin-inline: auto; }
+/* Reference Image Layout Styles */
+.hero-micro-left, .hero-micro-right {
+  position: absolute; top: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+  font-family: monospace, var(--sans); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.45);
+  pointer-events: none; z-index: 10;
+}
+.hero-micro-left { left: max(1rem, var(--pad)); text-align: left; }
+.hero-micro-right { right: max(1rem, var(--pad)); text-align: right; }
+@media (max-width: 48rem) { .hero-micro-left, .hero-micro-right { display: none; } }
+
+.hero-organizer-pill {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-size: clamp(0.75rem, 1.8vw, 0.85rem); font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #ffffff;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 91, 0, 0.12); border: 1px solid rgba(255, 91, 0, 0.4);
+  padding: 0.45rem 1.4rem; border-radius: 999px; backdrop-filter: blur(14px);
+  box-shadow: 0 0 20px rgba(255, 91, 0, 0.2);
+}
+.pill-live-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--orange-hi);
+  box-shadow: 0 0 10px var(--orange-hi);
+}
+.ft-tag { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.12em; }
+
+/* SVG Title Typography with elegant aesthetic font */
+.ref-title-text {
+  font-family: 'Syne', 'Chakra Petch', 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 138px;
+  letter-spacing: -0.01em;
+}
+.ref-white { fill: #ffffff; }
+.ref-orange { fill: url(#refOrangeGrad); }
+
+.tagline-ref {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem 0.5rem;
+  font-family: 'Syne', var(--sans); font-weight: 800;
+  font-size: clamp(0.95rem, 2.5vw, 1.8rem); text-transform: uppercase;
+  letter-spacing: 0.16em; color: rgba(255, 255, 255, 0.95); margin-top: 0.65rem; line-height: 1.1;
+}
+.dot-o { color: #ff5b00; font-weight: 900; margin-left: 0.05em; }
+
+.sub-flagship {
+  font-family: var(--sans); font-size: clamp(0.72rem, 1.8vw, 0.95rem);
+  font-weight: 800; letter-spacing: clamp(0.14em, 2vw, 0.26em); text-transform: uppercase;
+  color: var(--muted); margin-top: 0.4rem; margin-bottom: 1.25rem; text-align: center;
+}
+
+.hero-pills-row {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 0.85rem;
+  margin-block: 0.5rem 1.5rem; width: 100%; max-width: 100%;
+}
+.ref-glass-pill {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1.1rem; border-radius: 999px;
+  background: rgba(22, 25, 34, 0.75); border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px); font-size: clamp(0.78rem, 2vw, 0.88rem); font-weight: 700;
+  color: #ffffff; letter-spacing: 0.04em;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4); max-width: 100%; box-sizing: border-box;
+}
+.ref-glass-pill svg { width: 1rem; height: 1rem; color: #ff5b00; flex: none; }
+
+.hero-dual-cta {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1rem; margin-top: 0.5rem; width: 100%;
+}
+.btn-ref-orange {
+  background: linear-gradient(135deg, #ff5b00, #ff7a1a) !important;
+  color: #000 !important; font-weight: 900 !important; border-radius: 999px !important;
+  padding: 0.8rem 1.8rem !important; font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
+  box-shadow: 0 6px 25px rgba(255, 91, 0, 0.5) !important;
+  max-width: 100%; min-height: 2.8rem !important;
+}
+.btn-ref-ghost {
+  background: rgba(18, 20, 26, 0.8) !important;
+  color: #ffffff !important; border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 999px !important; padding: 0.8rem 1.8rem !important; font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
+  backdrop-filter: blur(12px) !important;
+  max-width: 100%; min-height: 2.8rem !important;
+}
+.btn-ref-ghost:hover {
+  border-color: #ff5b00 !important; color: #fff !important;
+  box-shadow: 0 0 20px rgba(255, 91, 0, 0.3) !important;
+}
+
+@media (max-width: 40rem) {
+  .hero-dual-cta { flex-direction: column; align-items: center; width: 100%; }
+  .btn-ref-orange, .btn-ref-ghost { width: 100%; max-width: 20rem; text-align: center; }
+  .ref-glass-pill { font-size: .78rem; padding: .45rem .85rem; }
+}
+.hero-bottom-sponsors { margin-top: 2rem; display: flex; flex-direction: column; align-items: center; width: 100%; }
+.hero-title-sketch { width: 98vw; max-width: 88rem; margin-inline: auto; display: flex; align-items: center; justify-content: center; margin-block: .25rem; padding-inline: .5rem; }
+.hero-title-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.brand-title { font-family: 'Chakra Petch', 'Russo One', 'Anton', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase; font-size: 130px; letter-spacing: 2px; }
 .f1 .inst { font-size: .78rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: .75rem; }
-.f1 h1 { position: relative; isolation: isolate; font-size: clamp(4.2rem, min(19vw, 19vh), 12rem); line-height: .86; }
-.f1 h1 .y { display: block; color: var(--orange); }
+.f1 h1 { position: relative; isolation: isolate; line-height: .9; }
+.f1 h1 .y { display: inline-block; color: var(--orange); }
 .bi { position: relative; display: inline-block; }
 .bolt { position: absolute; left: 50%; top: -.17em; height: 1em; width: auto; aspect-ratio: 1 / 3; fill: var(--orange); transform: translateX(-50%); pointer-events: none; overflow: visible; }
 .bolt path { stroke: #000; stroke-width: 3; paint-order: stroke; }
@@ -144,7 +257,7 @@
 @supports (animation-timeline: scroll()) {
 @media (prefers-reduced-motion: no-preference) {
   :root { --F: 90svh; }
-  .story { height: calc(100svh - 4rem + 6 * var(--F)); }
+  .story { height: calc(100svh - 4rem + 5 * var(--F)); }
   .stage { position: sticky; top: 4rem; height: calc(100svh - 4rem); }
   .wipes { display: block; position: absolute; inset: 0; z-index: 5; pointer-events: none; overflow: hidden; }
   .wipe { position: absolute; left: 0; top: -10%; width: 70%; height: 120%; transform: translateX(-140%) skewX(-18deg);
@@ -157,9 +270,9 @@
     animation: fr linear both; animation-timeline: scroll(root);
     animation-range: calc(var(--fi) * var(--F)) calc((var(--fi) + 1) * var(--F)); }
   .f1 { animation-name: fr1; padding-block: 1rem; }
-  .f6 { animation-name: frL; }
-  /* below 64rem the sticky Register dock (~5rem) covers the frame's bottom edge: keep links clear of it (frames 1 and 6 hide the dock) */
-  @media (max-width: 63.99rem) { .f2, .f3, .f4, .f5 { padding-bottom: 5.75rem; } }
+  .f5 { animation-name: frL; }
+  /* below 64rem the sticky Register dock (~5rem) covers the frame's bottom edge: keep links clear of it (frames 1 and 5 hide the dock) */
+  @media (max-width: 63.99rem) { .f2, .f3, .f4 { padding-bottom: 5.75rem; } }
   /* hidden frames stay focusable (opacity 0, no pointer events); keyboard focus reveals the frame (module also scrolls to it), and JS-off nav anchors reveal the :target frame */
   .frame:has(:focus-visible), html:not(.js) .frame:target { opacity: 1 !important; pointer-events: auto !important; z-index: 6; background: var(--bg); }
   @keyframes fr { 0%, 6% { opacity: 0; pointer-events: none; transform: translateY(2.5rem) scale(.985); } 14%, 86% { opacity: 1; pointer-events: auto; transform: none; } 94%, 100% { opacity: 0; pointer-events: none; transform: translateY(-2.5rem) scale(1.015); } }
@@ -170,7 +283,7 @@
   .f-art { height: clamp(11rem, 40svh, 24rem); margin-bottom: 1rem; }
   .f2 { justify-content: flex-start; }
   .f2 .f-copy { margin-top: clamp(.5rem, 5svh, 3rem); }
-  .s-a, .s-b { animation: par linear both; animation-timeline: scroll(root); animation-range: 0 calc(6 * var(--F)); }
+  .s-a, .s-b { animation: par linear both; animation-timeline: scroll(root); animation-range: 0 calc(5 * var(--F)); }
   @keyframes par { from { transform: translateY(0) skewX(-18deg); } to { transform: translateY(8%) skewX(-18deg); } }
 
   /* per-element scroll choreography: --a/--b = start/end as fraction of the frame's scroll length */
@@ -205,7 +318,7 @@
   @keyframes rise2 { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 
   /* sticky Register dock: hidden while a frame's own Register button is on screen */
-  .dock-in { animation: dockv linear both; animation-timeline: scroll(root); animation-range: 0 calc(6.2 * var(--F)); }
+  .dock-in { animation: dockv linear both; animation-timeline: scroll(root); animation-range: 0 calc(5.2 * var(--F)); }
   @keyframes dockv { 0%, 13.3% { opacity: 0; visibility: hidden; } 16.3%, 78% { opacity: 1; visibility: visible; } 80.2%, 98.5% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; } }
 }
 }
@@ -252,4 +365,13 @@
   .f1 .cta .btn-lg { min-height: 3.4rem; }
   .f1 .facts { gap: .4rem; }
   .f1 .fact { padding: .4rem .8rem; }
+}
+/* Compact the hero's spacing on short screens so controls stay inside the stage. */
+@media (max-height: 700px) {
+  .sketch-hero-container { min-height: 0; padding-top: 0; }
+  .hero-top-timer { margin-block: 0 .4rem; }
+  .hero-bottom-sponsors { margin-top: .5rem; }
+  .hero-dual-cta { margin-top: .6rem; gap: .4rem; }
+  .hero-dual-cta .btn { min-height: 44px; padding-block: .6rem; }
+  .hero-pills-row { margin-top: .5rem; gap: .35rem; }
 }

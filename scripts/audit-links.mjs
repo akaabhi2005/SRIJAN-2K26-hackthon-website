@@ -1,0 +1,1 @@
+import {chromium} from 'playwright';const b=await chromium.launch({channel:'chrome'});const p=await b.newPage();await p.goto('http://127.0.0.1:4321/#reward');await p.waitForTimeout(1700);const r=await p.locator('#reward').evaluate(e=>getComputedStyle(e).opacity);console.log('direct prize link opacity',r);if(r!=='1')process.exitCode=1;await b.close();

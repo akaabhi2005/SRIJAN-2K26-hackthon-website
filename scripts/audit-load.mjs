@@ -1,0 +1,1 @@
+const started=performance.now();let failed=0;await Promise.all(Array.from({length:20},async()=>{for(let i=0;i<10;i++){try{const r=await fetch('http://127.0.0.1:4321/');if(!r.ok)failed++;await r.arrayBuffer();}catch{failed++;}}}));console.log({requests:200,concurrency:20,failed,elapsedMs:Math.round(performance.now()-started)});if(failed)process.exitCode=1;

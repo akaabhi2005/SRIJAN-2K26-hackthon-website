@@ -38,7 +38,7 @@
       "frame": 2
     },
     {
-      "label": "How it works",
+      "label": "Timeline",
       "href": "#how"
     },
     {
@@ -46,14 +46,13 @@
       "href": "#schedule"
     },
     {
-      "label": "Rewards",
+      "label": "Prizes",
       "href": "#reward",
       "frame": 4
     },
     {
-      "label": "Sponsors",
-      "href": "#move",
-      "frame": 5
+      "label": "Partners",
+      "href": "#partners"
     },
     {
       "label": "FAQ",
@@ -317,17 +316,44 @@
     "heading": "See you at SRMCEM.",
     "text": "Ready to build? Register your team, or bring your brand to the stage as a partner.",
     "questions": {
-      "heading": "Questions? Contact us",
+      "heading": "Organizing Team & Leads",
       "people": [
         {
           "name": "Ankit Yadav",
           "role": "GFG SRMCEM Lead",
-          "email": "gfg.campusbody.srmcem@gmail.com"
+          "email": "gfg.campusbody.srmcem@gmail.com",
+          "linkedin": "https://www.linkedin.com/in/ankit-yadav-a83094306/",
+          "image": "/team/ankit.png"
         },
         {
           "name": "Abhay Shanker Tiwari",
           "role": "CSI SRMCEM Lead",
-          "email": "Lead.csidcoders@gmail.com"
+          "email": "Lead.csidcoders@gmail.com",
+          "linkedin": "https://www.linkedin.com/in/abhay-shanker-tiwari-0a8031213/",
+          "image": "/team/abhay.jpg"
+        },
+        {
+          "name": "Vineet Pandey",
+          "role": "CSI SRMCEM Co-Lead",
+          "email": "vineet.pandey.org@gmail.com",
+          "linkedin": "https://www.linkedin.com/in/vineet-pandey-83500a328/",
+          "image": "/team/vineet-pandey.jpg"
+        },
+        {
+          "name": "Abhishek Soni",
+          "role": "Technical Lead CSI",
+          "email": "iamabhi.as0001@gmail.com",
+          "phone": "9140052380",
+          "linkedin": "https://www.linkedin.com/in/abhishek-soni-06725326b/",
+          "image": "/team/abhishek.jpg"
+        },
+        {
+          "name": "Vineet Shukla",
+          "role": "Technical Lead GFG",
+          "email": "vineetshukla.work@gmail.com",
+          "phone": "9236950937",
+          "linkedin": "https://www.linkedin.com/in/vineet-shukla-0b1b67313/",
+          "image": "/team/vineet-shukla.png"
         }
       ]
     },

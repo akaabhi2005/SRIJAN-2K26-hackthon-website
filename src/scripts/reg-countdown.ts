@@ -84,7 +84,7 @@ if (lines.length && !Number.isNaN(closes)) {
     const s = Math.ceil(ms / 1000);
     const vals = [pad(Math.floor(s / 86400)), pad(Math.floor((s % 86400) / 3600)), pad(Math.floor((s % 3600) / 60)), pad(s % 60)];
     const animate = !reduce && !first && !document.hidden;
-    for (const v of views) vals.forEach((x, i) => setNum(v.nums[i], x, animate));
+    for (const v of views) vals.forEach((x, i) => setNum(v.nums[i], x, animate && v.line.getBoundingClientRect().bottom > 0 && v.line.getBoundingClientRect().top < innerHeight));
     if (chip) { vals.forEach((x, i) => setNum(chipNums[i], x, false)); chip.dataset.state = 'open'; }
     const mins = Math.max(1, Math.ceil(ms / 60000)), D = Math.floor(mins / 1440), H = Math.floor((mins % 1440) / 60), M = mins % 60;
     const text = `${lead} ${D ? count(D, uDay) + (H ? ' ' + count(H, uHour) : '') : H ? count(H, uHour) + (M ? ' ' + count(M, uMin) : '') : count(M, uMin)}`;
@@ -96,7 +96,7 @@ if (lines.length && !Number.isNaN(closes)) {
   // Re-arm on each displayed-second boundary (seconds round up, so the value changes when ms crosses a multiple of 1000).
   const loop = () => { tick(); if (!done) timer = window.setTimeout(loop, ((closes - Date.now()) % 1000) + 5); };
   loop();
-  document.addEventListener('visibilitychange', () => { if (!document.hidden && !done) { clearTimeout(timer); loop(); } });
+  document.addEventListener('visibilitychange', () => { clearTimeout(timer); if (!document.hidden && !done) loop(); });
 }
 
 // Keyboard: in the pinned story, frames 3, 4 and 6 are opacity-0 (still focusable) until scrolled to.

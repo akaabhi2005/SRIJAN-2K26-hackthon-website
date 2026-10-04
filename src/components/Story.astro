@@ -50,28 +50,67 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
     <!-- 1 · SPARK -->
     <article class="frame f1" style="--fi:0">
       <Skyline cls="s s-hero" label={story.ground.alt} />
-      <div class="in">
-        <p class="inst">{ev.type}</p>
-        <h1 id="hero-title" class="display kin">
-          <span class="sr">{`${ev.name} ${ev.year}`}</span><span class="lit" aria-hidden="true"></span><span class="nm" aria-hidden="true">{split(nameA).map((ch, i) => <span class="ch" style={`--c:${i}`}>{ch}</span>)}</span><span class="bi" aria-hidden="true"><span class="nm">{split(nameI).map((ch, i) => <span class="ch" style={`--c:${i}`}>{ch}</span>)}</span><svg class="bolt" viewBox="0 0 40 120" aria-hidden="true" focusable="false"><path d="M27 0L5 68h15L11 120l26-74H22L27 0z"/></svg></span><span class="nm" aria-hidden="true">{split(nameB).map((ch, i) => <span class="ch" style={`--c:${i + nameA.length + 1}`}>{ch}</span>)}</span>{' '}<span class="y chroma-pulse" aria-hidden="true">{split(ev.year).map((ch, i) => <span class="ch" style={`--c:${i}`}>{ch}</span>)}<span class="fx fx-a" aria-hidden="true">{ev.year}</span><span class="fx fx-b" aria-hidden="true">{ev.year}</span></span>
-        </h1>
-        <p class="tag kin"><span class="sr">{ev.tagline.join(' • ')}</span>{ev.tagline.map((t, i) => <><span class:list={['tw', i === 2 && 'chroma-pulse']} aria-hidden="true">{split(t).map((ch, j) => <span class="ch" style={`--c:${j}`}>{ch}</span>)}{i === 2 && <><span class="fx fx-a">{t}</span><span class="fx fx-b">{t}</span></>}</span>{i < ev.tagline.length - 1 && <i aria-hidden="true">•</i>}</>)}</p>
-        <div class="sponsored">
+      <div class="in sketch-hero-container">
+        <!-- TOP: Registration Countdown -->
+        <div class="hero-top-timer">
+          <RegLine live />
+        </div>
+
+        <!-- CENTER: Main Content -->
+        <div class="hero-hero-center">
+
+          <h1 id="hero-title" class="hero-title-sketch">
+            <span class="sr">{`${ev.name} ${ev.year}`}</span>
+            <svg class="hero-title-svg" viewBox="0 0 1400 150" width="100%" height="150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SRIJAN.2K26">
+              <defs>
+                <linearGradient id="refOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff5b00" />
+                  <stop offset="100%" stop-color="#ffa048" />
+                </linearGradient>
+                <filter id="refSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#ff5b00" flood-opacity="0.45" />
+                </filter>
+              </defs>
+              <g filter="url(#refSoftGlow)">
+                <text x="700" y="118" text-anchor="middle" class="ref-title-text">
+                  <tspan class="ref-white">SRIJAN</tspan>
+                  <tspan class="ref-orange">.2K26</tspan>
+                </text>
+              </g>
+            </svg>
+          </h1>
+
+          <p class="tagline-ref">
+            <span>BUILD<span class="dot-o">.</span></span>
+            <span>CREATE<span class="dot-o">.</span></span>
+            <span>IMPACT<span class="dot-o">.</span></span>
+          </p>
+
+          <p class="sub-flagship">FLAGSHIP INTER-COLLEGE HACKATHON</p>
+
+          <div class="hero-pills-row">
+            <div class="ref-glass-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <span>13–14 OCTOBER 2026</span>
+            </div>
+            <div class="ref-glass-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>SRMCEM • LUCKNOW</span>
+            </div>
+          </div>
+
+          <div class="hero-dual-cta">
+            <a class="btn btn-primary btn-ref-orange" data-reg-btn data-register data-magnetic href={register.href} target="_blank" rel="noopener noreferrer">{register.label} ↗</a>
+            <a class="btn btn-ghost btn-ref-ghost" data-magnetic href="#about">EXPLORE DETAILS ⌄</a>
+          </div>
+        </div>
+
+        <!-- BOTTOM: Sponsored by -->
+        <div class="sponsored hero-bottom-sponsors" id="partners">
           <p class="sp-label">{sponsors.label}</p>
           <ul class="sp-logos" aria-label={sponsors.label}>
             {logoList.map((l) => <li><Img src={logos[l.logo]} widths={[l.w]} fallbackWidth={l.w} sizes={`${l.w}px`} alt={l.alt} width={l.w} height={l.h} loading="eager" /></li>)}
           </ul>
-        </div>
-        <p class="when display">{story.spark.line}</p>
-        <p class="support">{story.spark.support}</p>
-        <ul class="facts" aria-label="Event details">
-          {chips.map(([d, t]) => (
-            <li class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={d}/></svg><span>{t}</span></li>
-          ))}
-        </ul>
-        <div class="cta">
-          <a class="btn btn-primary btn-lg" data-reg-btn data-magnetic href={register.href} target="_blank" rel="noopener noreferrer" data-register>{register.label}<span class="sr"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={arrow}/></svg></a>
-          <RegLine live />
         </div>
       </div>
     </article>
@@ -117,25 +156,6 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
         </svg>
       </div>
       <div class="f-copy"><h2 class="line total display" data-prize><span class="sr">{prizes.total}</span><span class="prize-fx" aria-hidden="true"><span class="prize-head">{prizeHead}</span><span class="prize-scramble prize-fig">{prizeFig}</span><span class="prize-tail">{prizeTail}</span></span></h2><p class="motto display">{prizes.motto.map((m, i) => <><span>{m}</span>{i < prizes.motto.length - 1 && <i aria-hidden="true">•</i>}</>)}</p></div>
-    </article>
-
-    <!-- 6 · YOUR MOVE -->
-    <article class="frame f6" id="move" style="--fi:5">
-      <div class="in">
-        <h2 class="line display">{story.move.line}</h2>
-        <p class="sub">{story.move.sub}</p>
-        <div class="cta">
-          <a class="btn btn-primary btn-lg btn-xl" data-reg-btn data-magnetic href={register.href} target="_blank" rel="noopener noreferrer" data-register>{register.label}<span class="sr"> (opens in a new tab)</span></a>
-          <RegLine />
-        </div>
-        <div class="sp-row">
-          <ul class="sp-logos sp-big" aria-label={sponsors.label}>
-            {logoList.map((l) => <li><Img src={logos[l.logo]} widths={[l.w]} fallbackWidth={l.w} sizes={`${l.w}px`} alt={l.alt} width={l.w} height={l.h} loading="lazy" /></li>)}
-          </ul>
-          <a class="btn btn-ghost" data-magnetic href={sponsors.partner.href} target="_blank" rel="noopener noreferrer">{sponsors.partner.label}</a>
-        </div>
-        <p class="faqlink">{story.move.faq.text} <a href={story.move.faq.href}>{story.move.faq.label}</a></p>
-      </div>
     </article>
   </div>
 </section>

@@ -9,6 +9,21 @@ export const jump = (y: number) => (lenis ? lenis.scrollTo(y, { immediate: true,
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pinned = !!window.CSS?.supports?.('animation-timeline: scroll()') && !reduce;
 
+// A fragment opened directly (or restored with Back/Forward) must reveal its pinned frame.
+const restoreFrame = () => {
+  if (!pinned || !location.hash) return;
+  let id: string;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  const frame = document.getElementById(id)?.closest<HTMLElement>('.frame');
+  const story = document.querySelector<HTMLElement>('.story');
+  const stage = story?.querySelector<HTMLElement>('.stage');
+  if (!frame || !story || !stage) return;
+  const F = (story.offsetHeight - stage.offsetHeight) / 5;
+  const i = Number(frame.style.getPropertyValue('--fi'));
+  jump(Math.round((i + (i ? .55 : 0)) * F));
+};
+addEventListener('hashchange', restoreFrame);
+addEventListener('popstate', restoreFrame);
 const start = () => {
   if (reduce || lenis) return;
   lenis = new Lenis({ lerp: 0.09, smoothWheel: true, wheelMultiplier: 1, syncTouch: false, autoRaf: false, anchors: false });
@@ -18,6 +33,7 @@ const start = () => {
   const run = () => { if (!id && !document.hidden) id = requestAnimationFrame(loop); };
   document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAnimationFrame(id); id = 0; } else run(); });
   run();
+  restoreFrame();
   // In-page links: scroll through Lenis (native smooth-scroll would fight it) and keep focus management for the skip link.
   document.addEventListener('click', (e) => {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -28,10 +44,12 @@ const start = () => {
     if (!t) return;
     e.preventDefault(); e.stopPropagation();
     document.querySelector('.menu[open]')?.removeAttribute('open'); // the menu's own click handler no longer sees this event
-    const F = 0.9 * innerHeight, frame = t.closest<HTMLElement>('.frame');
+    const story = document.querySelector<HTMLElement>('.story');
+    const stage = story?.querySelector<HTMLElement>('.stage');
+    const F = story && stage ? (story.offsetHeight - stage.offsetHeight) / 5 : 0.9 * innerHeight, frame = t.closest<HTMLElement>('.frame');
     let y: number;
     if (a.dataset.f !== undefined && pinned) y = Math.round((+a.dataset.f + 0.5) * F);
-    else if (frame && pinned) y = Math.round((Number(frame.style.getPropertyValue('--fi')) + 0.55) * F);
+    else if (frame && pinned) y = Math.round((Number(frame.style.getPropertyValue('--fi')) + (frame.classList.contains('f1') ? 0 : 0.55)) * F);
     else y = Math.round(t.getBoundingClientRect().top + scrollY - (t === document.documentElement ? 0 : 80));
     lenis.scrollTo(Math.max(0, y), { duration: 1.1, onComplete: () => { if (!frame && t !== document.documentElement) { if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1'); t.focus({ preventScroll: true }); } } });
     if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
