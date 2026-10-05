@@ -283,13 +283,6 @@
       "heading": "Organizing Team & Leads",
       "people": [
         {
-          "name": "Ankit Yadav",
-          "role": "GFG SRMCEM Lead",
-          "email": "gfg.campusbody.srmcem@gmail.com",
-          "linkedin": "https://www.linkedin.com/in/ankit-yadav-a83094306/",
-          "image": "/team/ankit.png"
-        },
-        {
           "name": "Abhay Shanker Tiwari",
           "role": "CSI SRMCEM Lead",
           "email": "Lead.csidcoders@gmail.com",
@@ -302,6 +295,13 @@
           "email": "vineet.pandey.org@gmail.com",
           "linkedin": "https://www.linkedin.com/in/vineet-pandey-83500a328/",
           "image": "/team/vineet-pandey.jpg"
+        },
+        {
+          "name": "Ankit Yadav",
+          "role": "GFG SRMCEM Lead",
+          "email": "gfg.campusbody.srmcem@gmail.com",
+          "linkedin": "https://www.linkedin.com/in/ankit-yadav-a83094306/",
+          "image": "/team/ankit.png"
         },
         {
           "name": "Abhishek Soni",
