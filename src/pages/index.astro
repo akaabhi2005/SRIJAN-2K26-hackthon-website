@@ -155,7 +155,13 @@ const orgLogos = [
         </div>
         <div class="cta" data-reveal>
           <p class="display yourmove">{how.cta}</p>
-          <a class="btn btn-primary btn-lg" data-reg-btn data-magnetic href={register.href} target="_blank" rel="noopener noreferrer" data-register>{register.label}<span class="sr"> (opens in a new tab)</span></a>
+          <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center;">
+            <a class="btn btn-primary btn-lg" data-reg-btn data-magnetic href={register.href} target="_blank" rel="noopener noreferrer" data-register>{register.label}<span class="sr"> (opens in a new tab)</span></a>
+            <a class="btn btn-whatsapp btn-lg" href="https://chat.whatsapp.com/Kx2qldtBQjH5vQzuw3xdLM" target="_blank" rel="noopener noreferrer" title="Join Srijan 2K26 WhatsApp Group">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="wa-ic" aria-hidden="true"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.182 8.182 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.64.8-.79.96-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.16-.47-.28z"/></svg>
+              <span>Join WhatsApp Group</span>
+            </a>
+          </div>
           <RegLine cls="rl-cta" />
         </div>
       </div>
@@ -221,6 +227,19 @@ const orgLogos = [
             <div class="stat-box"><span class="stat-num">₹1.5L+</span><span class="stat-lbl">PRIZE POOL</span></div>
             <div class="stat-box"><span class="stat-num">500+</span><span class="stat-lbl">INNOVATORS</span></div>
           </div>
+        </div>
+
+        <div class="whatsapp-card" data-reveal>
+          <div class="wa-card-content">
+            <div class="wa-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="wa-banner-ic" aria-hidden="true"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.182 8.182 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.64.8-.79.96-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.16-.47-.28z"/></svg>
+            </div>
+            <div class="wa-card-info">
+              <h3 class="wa-card-h">Official Srijan 2K26 WhatsApp Group</h3>
+              <p class="wa-card-p">Join for instant announcements, team finding, rules updates & real-time query support.</p>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/Kx2qldtBQjH5vQzuw3xdLM" target="_blank" rel="noopener noreferrer" class="btn btn-wa-action">Join Group ↗</a>
         </div>
       </div>
     </section>
@@ -301,6 +320,14 @@ const orgLogos = [
               <a href="mailto:vineetshukla.work@gmail.com" class="sup-link mail">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sup-ic"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 <span>vineetshukla.work@gmail.com</span>
+              </a>
+            </li>
+            <li class="support-item">
+              <strong class="sup-name">WhatsApp Group</strong>
+              <span class="sup-role">Queries & Announcements</span>
+              <a href="https://chat.whatsapp.com/Kx2qldtBQjH5vQzuw3xdLM" target="_blank" rel="noopener noreferrer" class="sup-link whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="sup-ic wa-color"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.182 8.182 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.64.8-.79.96-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.16-.47-.28z"/></svg>
+                <span>Join Official Group ↗</span>
               </a>
             </li>
           </ul>

@@ -425,26 +425,18 @@
   },
   "fee": {
     "heading": "Registration fee",
-    "note": "₹50 per team member",
+    "note": "₹200 per team",
     "tiers": [
       {
-        "label": "Solo",
-        "amount": "₹50"
+        "label": "Team Size",
+        "amount": "2–4 members"
       },
       {
-        "label": "2 members",
-        "amount": "₹100"
-      },
-      {
-        "label": "3 members",
-        "amount": "₹150"
-      },
-      {
-        "label": "4 members",
-        "amount": "₹200"
+        "label": "Registration Fee",
+        "amount": "₹200 / team"
       }
     ],
-    "caption": "Total for your team"
+    "caption": "Event Participation Details"
   },
   "registration": {
     "closes": "2026-10-11T12:00:00+05:30",
