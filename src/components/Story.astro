@@ -61,20 +61,27 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
 
           <h1 id="hero-title" class="hero-title-sketch">
             <span class="sr">{`${ev.name} ${ev.year}`}</span>
-            <svg class="hero-title-svg" viewBox="0 0 1400 150" width="100%" height="150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SRIJAN.2K26">
+            <svg class="hero-title-svg" viewBox="0 0 1400 160" width="100%" height="160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SRIJAN .2K26/">
               <defs>
                 <linearGradient id="refOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#ff5b00" />
-                  <stop offset="100%" stop-color="#ffa048" />
+                  <stop offset="60%" stop-color="#ff8a33" />
+                  <stop offset="100%" stop-color="#ffb86c" />
                 </linearGradient>
-                <filter id="refSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#ff5b00" flood-opacity="0.45" />
+                <linearGradient id="refWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" />
+                  <stop offset="100%" stop-color="#e0e6ed" />
+                </linearGradient>
+                <filter id="refSoftGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#ff5b00" flood-opacity="0.55" />
+                  <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#ff9900" flood-opacity="0.75" />
                 </filter>
               </defs>
               <g filter="url(#refSoftGlow)">
-                <text x="700" y="118" text-anchor="middle" class="ref-title-text">
+                <text x="700" y="122" text-anchor="middle" class="ref-title-text">
                   <tspan class="ref-white">SRIJAN</tspan>
-                  <tspan class="ref-orange">.2K26</tspan>
+                  <tspan class="ref-orange"> .2K26</tspan>
+                  <tspan class="ref-slash">/</tspan>
                 </text>
               </g>
             </svg>

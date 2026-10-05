@@ -84,13 +84,14 @@
 
 /* SVG Title Typography with elegant aesthetic font */
 .ref-title-text {
-  font-family: 'Syne', 'Chakra Petch', 'Unbounded', sans-serif;
+  font-family: 'Chakra Petch', 'Orbitron', 'Unbounded', 'Syne', sans-serif;
   font-weight: 900;
   font-size: 138px;
   letter-spacing: -0.01em;
 }
-.ref-white { fill: #ffffff; }
+.ref-white { fill: url(#refWhiteGrad); }
 .ref-orange { fill: url(#refOrangeGrad); }
+.ref-slash { fill: #ff6a00; font-weight: 900; opacity: 0.95; }
 
 .tagline-ref {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem 0.5rem;
