@@ -109,68 +109,32 @@
       "Open Innovation"
     ],
     "problemStatements": {
-      "heading": "Problem statements",
-      "note": "Draft list, final list soon.",
+      "heading": "Problem Statement Tracks",
+      "note": "Choose your track and build your solution around these core hackathon themes.",
       "items": [
         {
-          "title": "Autonomous AI Agent Evaluation and Reliability Engine",
-          "text": "A testing platform that tries tricky scenarios on AI agents in sandboxes and flags where they fail."
+          "title": "AI & Machine Learning",
+          "text": "Build intelligent systems, predictive models, autonomous AI agents, computer vision applications, or NLP solutions that learn from data to solve complex real-world challenges and automate decision-making."
         },
         {
-          "title": "Zero-Trust Autonomous Agent Security & Sidecar Sandbox Engine",
-          "text": "A security layer that watches what AI agents do, limits what they can access, and blocks unsafe actions."
+          "title": "Web & App Development",
+          "text": "Create responsive, high-performance web applications, cross-platform mobile apps, or seamless digital platforms focusing on exceptional UI/UX, robust backend architecture, and modern web frameworks."
         },
         {
-          "title": "Autonomous Multi-Cloud FinOps & Infrastructure Self-Healing Fabric",
-          "text": "A system that tests how cloud infrastructure fails, helps lower cloud costs, and suggests fixes to reduce downtime."
+          "title": "Cybersecurity",
+          "text": "Develop security solutions, threat detection mechanisms, zero-trust architectures, ethical hacking tools, or data encryption systems to defend digital infrastructure against cyber threats and vulnerabilities."
         },
         {
-          "title": "Real-Time Autonomous Supply Chain Resiliency & Graph Replanning",
-          "text": "A digital twin that uses threat and delay data to spot likely logistics bottlenecks and propose alternate routes."
+          "title": "Smart Campus Solutions",
+          "text": "Innovate connected IoT devices, automated attendance/navigation systems, smart energy management, or digital campus utilities to enhance safety, sustainability, and daily student life."
         },
         {
-          "title": "Distributed Smart Grid Real-Time Load & Energy Orchestrator",
-          "text": "A control system for smart meters and battery micro-grids that helps balance power load."
+          "title": "Sustainability",
+          "text": "Design eco-friendly solutions, renewable energy trackers, carbon footprint analyzers, smart waste management, or social impact tools aimed at combating environmental degradation and climate change."
         },
         {
-          "title": "Automated Regulatory Compliance & Code Refactoring Engine",
-          "text": "A tool that maps legal rules to a codebase to find privacy issues and propose code fixes."
-        },
-        {
-          "title": "Closed-Loop Clinical Decision Support & Patient Trajectory Engine",
-          "text": "A healthcare AI that combines patient records and vitals to flag patients who may be getting worse."
-        },
-        {
-          "title": "Decentralized Anti-Money Laundering (AML) & Fraud Graph Engine",
-          "text": "A privacy-preserving graph engine that spots suspicious patterns across financial transaction streams."
-        },
-        {
-          "title": "Predictive Natural Disaster Relief & Autonomous Resource Dispatch",
-          "text": "A crisis tool that combines satellite, drone and SOS data to assess damage and route rescue teams."
-        },
-        {
-          "title": "Explainable Credit Risk & Bias-Mitigated Underwriting Platform",
-          "text": "A credit-scoring platform that uses alternative financial data, aims for fairness, and explains decisions to applicants."
-        },
-        {
-          "title": "Precision AgTech Micro-Climate & Disease Predictive Engine",
-          "text": "A farming tool that combines satellite imagery and field sensors to predict crop disease and guide treatment."
-        },
-        {
-          "title": "Autonomous Software Refactoring & Technical Debt Remediation Agent",
-          "text": "An agent that maps code dependencies, finds architectural debt, and helps carry out upgrades with tests."
-        },
-        {
-          "title": "Cross-Silo Enterprise Knowledge Discovery & Graph Engine",
-          "text": "A knowledge graph linking team tools (Slack, Jira, Docs, GitHub) to give accurate, permission-aware answers."
-        },
-        {
-          "title": "Smart Urban Traffic & Emergency Vehicle Corridor Orchestrator",
-          "text": "An edge-based traffic system that uses camera feeds to tune signals and clear paths for emergency vehicles."
-        },
-        {
-          "title": "High-Frequency Market Manipulation & Spoofing Detector",
-          "text": "A fast market-surveillance pipeline that reads order-book data to detect spoofing and other manipulation."
+          "title": "Open Innovation",
+          "text": "Have a novel or groundbreaking idea outside the standard domains? Build an original, out-of-the-box solution using any tech stack to tackle real-world problems and drive technological impact."
         }
       ]
     },
