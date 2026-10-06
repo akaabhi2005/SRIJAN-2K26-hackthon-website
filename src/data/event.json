@@ -21,7 +21,7 @@
     "collaborator": "GFG SRMCEM",
     "instituteLine": "An institution promoted by IITians",
     "eligibility": "Students from SRMCEM and other colleges",
-    "teamSize": "1–4 members"
+    "teamSize": "2–4 members"
   },
   "register": {
     "href": "https://forms.gle/6yS5wjADebhmvPpZA",
@@ -88,8 +88,8 @@
       },
       {
         "k": "Team size",
-        "t": "1–4 members",
-        "d": "Join solo or bring a team of up to four."
+        "t": "2–4 members",
+        "d": "Bring a team of 2 to 4 members."
       },
       {
         "k": "Where",
@@ -237,7 +237,7 @@
       },
       {
         "q": "How big can a team be?",
-        "a": "Teams of 1 to 4 members, so you can join solo."
+        "a": "Teams of 2 to 4 members."
       },
       {
         "q": "How much does it cost?",
@@ -331,7 +331,7 @@
     "ground": {
       "line": "Every big thing starts small.",
       "sub": [
-        "Come solo or with a team of up to four.",
+        "Bring a team of 2 to 4 members.",
         "Hosted at SRMCEM, Lucknow, the City of Nawabs."
       ],
       "alt": "Stylised city skyline at dusk, with domes, minarets, an arched gateway and modern towers"
