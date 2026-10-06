@@ -246,7 +246,7 @@
       },
       {
         "q": "When does registration close?",
-        "a": "Registration closes on 11 Oct 2026 at 12:00 PM IST.",
+        "a": "Registration closes on 12 Oct 2026 at 12:00 PM IST.",
         "regClose": true
       },
       {
@@ -355,8 +355,8 @@
         {
           "title": "Register",
           "sub": "Submit your idea",
-          "note": "Register by 11 Oct, 12:00 PM IST",
-          "day": "11"
+          "note": "Register by 12 Oct, 12:00 PM IST",
+          "day": "12"
         },
         {
           "title": "Shortlist",
@@ -439,7 +439,7 @@
     "caption": "Event Participation Details"
   },
   "registration": {
-    "closes": "2026-10-11T12:00:00+05:30",
+    "closes": "2026-10-12T12:00:00+05:30",
     "countdown": {
       "lead": "Registration closes in",
       "compact": "Closes in",
