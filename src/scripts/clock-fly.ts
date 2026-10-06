@@ -1,3 +1,4 @@
+import { storyLayout } from './story-layout';
 // Hero clock -> corner chip. FLIP-style, scroll-linked: while the pinned hero scrolls, the REAL hero clock (.f1 .rl-clock) is moved with
 // transform + opacity only, from its natural position to the chip's rect; the chip crossfades in as it arrives. Everything is a pure
 // function of scrollY (no timers, no tween): scrolling back to 0 puts the clock exactly back (inline styles removed), however fast you jump.
@@ -16,14 +17,17 @@ export function initChip() {
   const clock = document.querySelector<HTMLElement>('.f1 .regline .rl-clock');
   const regs = [...document.querySelectorAll<HTMLElement>('[data-reg-btn]')].filter((a) => !a.closest('.top, .dock, .story'));
   const lastReg = story.querySelector<HTMLElement>('.f6 [data-reg-btn]'); // the last frame's button: only a real target once the pinned story is over (its frame is hidden before that)
-  const pinned = !!window.CSS?.supports?.('animation-timeline: scroll()');
-  const canFly = pinned && !!stage && !!clock && !!clock.closest('.stage');
+  let pinned = false;
+  let canFly = false;
 
   let F = 0.9 * innerHeight;
   let g: { dx: number; dy: number; s: number } | null = null;
   // Geometry from layout offsets (immune to the transform we apply) + the chip's fixed rect. Recomputed on resize, font load, size changes.
   const measure = () => {
-    F = (story.offsetHeight - (stage?.offsetHeight ?? 0)) / 5 || 0.9 * innerHeight;
+    const layout = storyLayout();
+    pinned = !!layout;
+    canFly = pinned && !!stage && !!clock;
+    F = layout?.step || 0.9 * innerHeight;
     if (!canFly || !stage || !clock) { g = null; return; }
     let x = 0, y = 0, e: HTMLElement | null = clock;
     for (; e && e !== stage; e = e.offsetParent as HTMLElement | null) { x += e.offsetLeft; y += e.offsetTop; }
@@ -80,11 +84,13 @@ export function initChip() {
     chip.classList.toggle('on', show && gate());
   };
   const req = () => { if (!raf) raf = requestAnimationFrame(update); };
-  const remeasure = () => { measure(); req(); };
+  let measurement = 0;
+  const remeasure = () => { if (!measurement) measurement = requestAnimationFrame(() => { measurement = 0; measure(); req(); }); };
 
   measure(); update();
   addEventListener('scroll', req, { passive: true });
   addEventListener('resize', remeasure);
+  addEventListener('storylayoutchange', remeasure);
   addEventListener('pageshow', remeasure);
   addEventListener('focusin', req); addEventListener('focusout', req);
   document.fonts?.ready.then(remeasure);

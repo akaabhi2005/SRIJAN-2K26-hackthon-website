@@ -1,35 +1,6 @@
 // Magnetic Register/Partner buttons, FAQ height panels, schedule day tabs (labels from the page).
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-const live = (el: HTMLElement) => el.getAttribute('aria-disabled') !== 'true' && el.hasAttribute('href');
-
-if (fine && !reduce) {
-  const btns = Array.from(document.querySelectorAll<HTMLElement>('[data-magnetic]'));
-  btns.forEach((b) => b.classList.add('btn-laser'));
-  const RADIUS = 40;
-  const distToBox = (x: number, y: number, r: DOMRect) => {
-    const cx = Math.min(Math.max(x, r.left), r.right);
-    const cy = Math.min(Math.max(y, r.top), r.bottom);
-    return Math.hypot(x - cx, y - cy);
-  };
-  let pressed = false;
-  addEventListener('pointerdown', () => { pressed = true; }, { passive: true });
-  addEventListener('pointerup', () => { pressed = false; }, { passive: true });
-  addEventListener('pointercancel', () => { pressed = false; }, { passive: true });
-  addEventListener('pointermove', (e) => {
-    if (e.pointerType && e.pointerType !== 'mouse') return;
-    if (pressed) return; // hold position while a press is in progress so the click target never slides
-    for (const b of btns) {
-      if (!live(b)) { b.style.transform = ''; continue; }
-      const r = b.getBoundingClientRect();
-      const d = distToBox(e.clientX, e.clientY, r);
-      if (d > RADIUS) { b.style.transform = ''; continue; }
-      const mx = r.left + r.width / 2, my = r.top + r.height / 2;
-      const k = (1 - d / RADIUS) * 0.28;
-      b.style.transform = `translate3d(${((e.clientX - mx) * k).toFixed(1)}px, ${((e.clientY - my) * k).toFixed(1)}px, 0)`;
-    }
-  }, { passive: true });
-}
+// Keep CSS hover feedback; moving every CTA on global pointermove caused layout reads and unstable click targets.
 
 document.querySelectorAll<HTMLDetailsElement>('[data-faq]').forEach((d) => {
   const sum = d.querySelector('summary');

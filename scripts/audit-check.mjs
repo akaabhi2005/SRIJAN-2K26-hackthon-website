@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const policy = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url))).headers[0].headers;
 let failures = 0;
-for (const [width, height] of [[320,568],[390,844],[768,1024],[1366,768],[1920,1080]]) {
+for (const [width, height] of [[320,568],[390,844],[768,1024],[844,390],[1024,600],[1366,768],[1920,1080]]) {
   const context = await browser.newContext({ viewport: {width,height} });
   const page = await context.newPage();
   const errors = [];

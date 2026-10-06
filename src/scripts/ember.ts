@@ -60,7 +60,7 @@ if (canvas && ctx) {
     ctx.globalCompositeOperation = 'lighter';
   };
 
-  if (reduce) {
+  if (reduce || coarse) {
     // one static frame: grid + a few seeded embers; no loop, no pointer listeners
     const paint = () => { size(); frame(0); let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
       for (let i = 0; i < 10; i++) { const p = { x: rnd() * W, y: H * (.35 + .6 * rnd()), s: 5 + rnd() * 7 } as P; ember(p, .3); } ctx.globalAlpha = 1; };
@@ -70,7 +70,6 @@ if (canvas && ctx) {
     let px = -1e4, py = -1e4, pActive = false, last = 0, raf = 0, t = 0, rt = 0, tid = 0;
     const setP = (x: number, y: number) => { px = x; py = y; pActive = true; };
     addEventListener('pointermove', (e) => setP(e.clientX, e.clientY), { passive: true });
-    addEventListener('mousemove', (e) => setP(e.clientX, e.clientY), { passive: true });
     addEventListener('touchmove', (e) => { const c = e.touches[0]; if (c) setP(c.clientX, c.clientY); }, { passive: true });
     addEventListener('touchstart', (e) => { const c = e.touches[0]; if (c) setP(c.clientX, c.clientY); }, { passive: true });
     const clear = () => { pActive = false; px = py = -1e4; };
@@ -96,9 +95,19 @@ if (canvas && ctx) {
       }
       ctx.globalAlpha = 1;
     };
-    const run = () => { if (!raf && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(tick); } };
+    let visible = true;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const run = () => { if (!raf && visible && !document.hidden && !motion.matches) { last = performance.now(); raf = requestAnimationFrame(tick); } };
     const stop = () => { cancelAnimationFrame(raf); raf = 0; };
-    const start = () => { size(); for (let i = 0; i < COUNT; i++) ps.push(spawn(null, true)); run(); document.addEventListener('visibilitychange', () => (document.hidden ? stop() : run())); };
+    const start = () => {
+      size(); for (let i = 0; i < COUNT; i++) ps.push(spawn(null, true)); run();
+      document.addEventListener('visibilitychange', () => (document.hidden ? stop() : run()));
+      motion.addEventListener('change', () => motion.matches ? stop() : run());
+      const story = document.querySelector('.story');
+      if (story && 'IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting; visible ? run() : stop();
+      }).observe(story);
+    };
     'requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 1500 }) : (tid = window.setTimeout(start, 300));
   }
 }

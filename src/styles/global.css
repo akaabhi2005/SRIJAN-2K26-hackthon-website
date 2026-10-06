@@ -508,10 +508,7 @@ html.js.reg-closed .fee[data-reveal], .reg-closed .fee { opacity: 0; transform: 
 .reg-closed .fee.gone { display: none; }
 .reg-closed .f1 .regline[data-state='closed'], .reg-closed .f6 .regline[data-state='closed'], .reg-closed .rl-cta[data-state='closed'], .reg-closed .regfee { visibility: hidden; }
 
-/* Lenis smooth scroll (class set by the library) and the pointer spotlight */
-html.lenis, html.lenis body { height: auto; }
-html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling; native smooth would fight it */
-.lenis.lenis-stopped { overflow: clip; }
+/* Pointer spotlight. */
 .spot { position: fixed; left: 0; top: 0; width: 600px; height: 600px; margin: -300px 0 0 -300px; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 400ms var(--ease); background: radial-gradient(circle closest-side, rgba(255,102,0,.08), transparent 80%); transform: translate3d(var(--mouse-x, 50vw), var(--mouse-y, 30vh), 0); will-change: transform; }
 .spot.on { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .spot { display: none; } }
@@ -633,7 +630,7 @@ html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling;
 }
 .people {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -1189,13 +1186,9 @@ html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling;
   font-weight: 700;
   color: #ffaa44;
   letter-spacing: 0.04em;
-  animation: suspensePulse 2.5s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.1);
 }
 
-@keyframes suspensePulse {
-  0%, 100% { border-color: rgba(255, 106, 0, 0.4); box-shadow: 0 0 8px rgba(255, 106, 0, 0.1); }
-  50% { border-color: rgba(255, 170, 68, 0.9); box-shadow: 0 0 20px rgba(255, 106, 0, 0.4); }
-}
 
 .prize-perks {
   font-size: 0.95rem;

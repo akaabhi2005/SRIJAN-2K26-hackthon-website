@@ -124,3 +124,11 @@ SRIJAN 2026 is supported by technology, mentorship, community, and industry part
 - Domains and technical benefits
 - Community support
 
+
+## Development and regression checks
+
+Use Node.js 22.12 or newer (tested on Node.js 24). Run `npm ci`, then `npm run build`. The output in `dist/` stays fully static.
+
+Run `npm run test:audit` after building. This starts an isolated local server with production security headers and checks screen sizes, navigation, keyboard controls, FAQ, registration expiry, no-JavaScript mode and reduced motion. Chrome must be installed. To also run Firefox/WebKit, install them with `npx playwright install firefox webkit` and set `BROWSERS=chrome,firefox,webkit`. Screenshots are written to the ignored `.audit/` folder.
+
+Phone, tablet and short/zoomed screens use naturally sized sections. The existing pinned scroll story runs only on sufficiently wide/tall screens and falls back to normal flow if its contents do not fit. Scroll input uses the browser's native momentum; fonts and stylesheet assets are served locally with fingerprinted filenames.

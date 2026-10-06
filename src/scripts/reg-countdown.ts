@@ -1,3 +1,4 @@
+import { storyLayout } from './story-layout';
 // Registration countdown clock. Bundled by Astro as an external module (no inline script, CSP unchanged).
 // Source of truth: registration.closes in event.json, an ISO string with an explicit +05:30 offset, so Date.parse is timezone-proof.
 // Every tick recomputes from Date.now(); seconds round up, so the clock never reads 00 : 00 : 00 : 00 or goes negative: at the close
@@ -46,7 +47,7 @@ if (lines.length && !Number.isNaN(closes)) {
   });
 
   // Corner chip: created by JS only (none without JS or under reduced motion), aria-hidden. Same clock, compact.
-  const chip = reduce ? null : document.body.appendChild(el('div', 'reg-chip'));
+  const chip = reduce || matchMedia('(pointer: coarse)').matches ? null : document.body.appendChild(el('div', 'reg-chip'));
   const chipNums: HTMLElement[] = [];
   if (chip) {
     chip.setAttribute('aria-hidden', 'true');
@@ -84,8 +85,9 @@ if (lines.length && !Number.isNaN(closes)) {
     const s = Math.ceil(ms / 1000);
     const vals = [pad(Math.floor(s / 86400)), pad(Math.floor((s % 86400) / 3600)), pad(Math.floor((s % 3600) / 60)), pad(s % 60)];
     const animate = !reduce && !first && !document.hidden;
-    for (const v of views) vals.forEach((x, i) => setNum(v.nums[i], x, animate && v.line.getBoundingClientRect().bottom > 0 && v.line.getBoundingClientRect().top < innerHeight));
-    if (chip) { vals.forEach((x, i) => setNum(chipNums[i], x, false)); chip.dataset.state = 'open'; }
+    const visible = views.map(v => { const r = v.line.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; });
+    views.forEach((v, index) => vals.forEach((x, i) => setNum(v.nums[i], x, animate && visible[index])));
+    if (chip) { vals.forEach((x, i) => setNum(chipNums[i], x, false)); if (chip.dataset.state !== 'open') chip.dataset.state = 'open'; }
     const mins = Math.max(1, Math.ceil(ms / 60000)), D = Math.floor(mins / 1440), H = Math.floor((mins % 1440) / 60), M = mins % 60;
     const text = `${lead} ${D ? count(D, uDay) + (H ? ' ' + count(H, uHour) : '') : H ? count(H, uHour) + (M ? ' ' + count(M, uMin) : '') : count(M, uMin)}`;
     if (text !== srText && now - srAt >= 60000) { srText = text; srAt = now; for (const v of views) v.sr.textContent = text; }
@@ -107,7 +109,7 @@ if (window.CSS?.supports?.('animation-timeline: scroll()') && !matchMedia('(pref
     const f = (e.target as Element | null)?.closest?.('.frame') as HTMLElement | null;
     if (!f || getComputedStyle(f.parentElement as Element).position !== 'sticky') return;
     const i = Number(f.style.getPropertyValue('--fi'));
-    const F = 0.9 * innerHeight, y = scrollY;
+    const F = storyLayout()?.step ?? 0.9 * innerHeight, y = scrollY;
     if (y >= (i + 0.12) * F && y <= (i + 0.88) * F) return; // frame already active
     jump(Math.round((i + (i === 0 ? 0.02 : 0.55)) * F));
   });
