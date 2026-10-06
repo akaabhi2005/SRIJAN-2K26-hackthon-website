@@ -277,8 +277,8 @@
       },
       {
         "q": "How much does it cost?",
-        "a": "₹50 per team member: ₹50 for 1, ₹100 for 2, ₹150 for 3, ₹200 for 4.",
-        "closedA": "Registration is closed. The fee was ₹50 per team member: ₹50 for 1, ₹100 for 2, ₹150 for 3, ₹200 for 4."
+        "a": "₹200 per team (Team size: 2 to 4 members).",
+        "closedA": "Registration is closed. The fee was ₹200 per team."
       },
       {
         "q": "When does registration close?",
@@ -287,11 +287,11 @@
       },
       {
         "q": "How are teams selected?",
-        "a": "Teams submit an idea in the registration form. Shortlisted teams are announced on 12 Oct, based on the ideas submitted."
+        "a": "Teams submit their idea in the registration form. Idea screening takes place on 12 Oct, and shortlisted teams are announced on 13 Oct via email or official WhatsApp group."
       },
       {
         "q": "When are shortlisted teams announced?",
-        "a": "On 12 Oct, based on the ideas submitted in the registration form."
+        "a": "On 13 Oct, selected team leaders will be notified via email or official WhatsApp group."
       },
       {
         "q": "Where is the finale?",
@@ -303,7 +303,7 @@
       },
       {
         "q": "What can we win?",
-        "a": "Rewards worth ₹1.5 Lakh+. The breakdown is announced soon."
+        "a": "Cash prizes, trophies, and certificates for Winner, 1st Runner Up & 2nd Runner Up! Cash prize amounts will be revealed live at the finale."
       }
     ],
     "contactPointer": {

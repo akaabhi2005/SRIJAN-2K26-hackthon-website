@@ -177,10 +177,67 @@ const orgLogos = [
         <!-- 3 Prize Cards Grid -->
         <div class="prizes-grid" data-stagger>
           {prizes.cards.map((c, i) => (
-            <div class={`prize-card ${c.featured ? 'featured' : ''}`} style={`--i:${i}`}>
+            <div class={`prize-card ${c.featured ? 'featured' : ''} ${c.id}`} style={`--i:${i}`}>
               <div class="prize-badge">{c.tag}</div>
               <div class="prize-icon-wrap">
-                <span class="prize-icon">{c.icon}</span>
+                {c.id === 'winner' ? (
+                  <svg viewBox="0 0 64 64" fill="none" class="trophy-svg gold-trophy" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#fff5a0" />
+                        <stop offset="45%" stop-color="#ffb300" />
+                        <stop offset="100%" stop-color="#ff6a00" />
+                      </linearGradient>
+                      <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#ffaa00" flood-opacity="0.75" />
+                      </filter>
+                    </defs>
+                    <path d="M18 10h28v18c0 8.5-6.5 15-14 15s-14-6.5-14-15V10z" fill="url(#goldGrad)" filter="url(#goldGlow)"/>
+                    <path d="M18 14H10c-2.2 0-4 1.8-4 4v4c0 4.4 3.6 8 8 8h4v-4h-4c-2.2 0-4-1.8-4-4v-4h8v-4z" fill="url(#goldGrad)"/>
+                    <path d="M46 14h8c2.2 0 4 1.8 4 4v4c0 4.4-3.6 8-8 8h-4v-4h4c2.2 0 4-1.8 4-4v-4h-8v-4z" fill="url(#goldGrad)"/>
+                    <path d="M28 43h8v9h-8z" fill="url(#goldGrad)"/>
+                    <path d="M20 52h24v4H20z" fill="url(#goldGrad)"/>
+                    <path d="M32 17l2.2 4.5 5 0.7-3.6 3.5 0.8 5-4.4-2.3-4.4 2.3 0.8-5-3.6-3.5 5-0.7z" fill="#ffffff" opacity="0.95"/>
+                  </svg>
+                ) : c.id === 'runner1' ? (
+                  <svg viewBox="0 0 64 64" fill="none" class="trophy-svg silver-trophy" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" />
+                        <stop offset="50%" stop-color="#d1d8e0" />
+                        <stop offset="100%" stop-color="#8899a6" />
+                      </linearGradient>
+                      <filter id="silverGlow" x="-30%" y="-30%" width="160%" height="160%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#d1d8e0" flood-opacity="0.55" />
+                      </filter>
+                    </defs>
+                    <path d="M18 10h28v18c0 8.5-6.5 15-14 15s-14-6.5-14-15V10z" fill="url(#silverGrad)" filter="url(#silverGlow)"/>
+                    <path d="M18 14H10c-2.2 0-4 1.8-4 4v4c0 4.4 3.6 8 8 8h4v-4h-4c-2.2 0-4-1.8-4-4v-4h8v-4z" fill="url(#silverGrad)"/>
+                    <path d="M46 14h8c2.2 0 4 1.8 4 4v4c0 4.4-3.6 8-8 8h-4v-4h4c2.2 0 4-1.8 4-4v-4h-8v-4z" fill="url(#silverGrad)"/>
+                    <path d="M28 43h8v9h-8z" fill="url(#silverGrad)"/>
+                    <path d="M20 52h24v4H20z" fill="url(#silverGrad)"/>
+                    <circle cx="32" cy="24" r="5" fill="#ffffff" opacity="0.9"/>
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 64 64" fill="none" class="trophy-svg bronze-trophy" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffb56b" />
+                        <stop offset="50%" stop-color="#d35400" />
+                        <stop offset="100%" stop-color="#6e2d00" />
+                      </linearGradient>
+                      <filter id="bronzeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#d35400" flood-opacity="0.55" />
+                      </filter>
+                    </defs>
+                    <path d="M18 10h28v18c0 8.5-6.5 15-14 15s-14-6.5-14-15V10z" fill="url(#bronzeGrad)" filter="url(#bronzeGlow)"/>
+                    <path d="M18 14H10c-2.2 0-4 1.8-4 4v4c0 4.4 3.6 8 8 8h4v-4h-4c-2.2 0-4-1.8-4-4v-4h8v-4z" fill="url(#bronzeGrad)"/>
+                    <path d="M46 14h8c2.2 0 4 1.8 4 4v4c0 4.4-3.6 8-8 8h-4v-4h4c2.2 0 4-1.8 4-4v-4h-8v-4z" fill="url(#bronzeGrad)"/>
+                    <path d="M28 43h8v9h-8z" fill="url(#bronzeGrad)"/>
+                    <path d="M20 52h24v4H20z" fill="url(#bronzeGrad)"/>
+                    <circle cx="32" cy="24" r="5" fill="#ffffff" opacity="0.85"/>
+                  </svg>
+                )}
               </div>
               <h3 class="prize-rank">{c.rank}</h3>
               <span class="prize-pos">{c.position}</span>

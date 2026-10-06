@@ -1131,10 +1131,26 @@ html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling;
   margin-bottom: 1rem;
 }
 
-.prize-card.featured .prize-icon-wrap {
-  background: rgba(255, 106, 0, 0.25);
-  border-color: var(--orange);
-  box-shadow: 0 0 24px rgba(255, 106, 0, 0.45);
+.trophy-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.prize-card:hover .trophy-svg {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+.prize-card.featured .trophy-svg {
+  width: 48px;
+  height: 48px;
+  animation: trophyFloat 3s infinite ease-in-out;
+}
+
+@keyframes trophyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .prize-icon {
