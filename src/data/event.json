@@ -47,7 +47,8 @@
     },
     {
       "label": "Prizes",
-      "href": "#reward"
+      "href": "#reward",
+      "frame": 4
     },
     {
       "label": "Partners",

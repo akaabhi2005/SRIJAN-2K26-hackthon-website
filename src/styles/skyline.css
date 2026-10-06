@@ -31,7 +31,7 @@
 }
 
 @supports (animation-timeline: scroll()) {
-@media (prefers-reduced-motion: no-preference) and (min-width: 64rem) and (min-height: 48rem) {
+@media (prefers-reduced-motion: no-preference) {
   .city { display: block; position: absolute; z-index: 0; perspective: 640px; perspective-origin: 50% 100%;
     animation: cityv linear both; animation-timeline: scroll(root); animation-range: 0 calc(6 * var(--F)); }
   .stage .sky.s { display: none; }

@@ -223,7 +223,7 @@
   .txt .note { font-size: .8rem; }
   .st + .st::before { left: calc(.85rem + 1.1rem - 1.5px); top: -.7rem; height: .7rem; }
 }
-@media (max-height: 700px) { .f4 > .f-copy.frame-heading .sub { display: none; } }
+@media (max-height: 700px) { .f4 > .f-copy.top .sub { display: none; } }
 @media (max-height: 600px) { .txt .note { display: none; } .st { padding: .35rem .8rem; } .f-copy.path-links { margin-top: .5rem; } } /* very short phones: keep the path links + footnote above the dock */
 @media (max-height: 540px) { .st { padding-block: .2rem; } .steps5 { gap: .45rem; margin-top: .6rem; } }
 
@@ -256,7 +256,7 @@
 
 /* ───────── Pinned scroll story ───────── */
 @supports (animation-timeline: scroll()) {
-@media (prefers-reduced-motion: no-preference) and (min-width: 64rem) and (min-height: 48rem) {
+@media (prefers-reduced-motion: no-preference) {
   :root { --F: 90svh; }
   .story { height: calc(100svh - 4rem + 5 * var(--F)); }
   .stage { position: sticky; top: 4rem; height: calc(100svh - 4rem); }

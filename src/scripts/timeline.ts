@@ -78,10 +78,7 @@ if (tracks.length) {
     paint();
   };
   addEventListener('scroll', req, { passive: true });
-  let resizing = 0;
-  const scheduleLayout = () => { if (!resizing) resizing = requestAnimationFrame(() => { resizing = 0; relayout(); }); };
-  addEventListener('resize', scheduleLayout, { passive: true });
-  addEventListener('storylayoutchange', scheduleLayout);
+  addEventListener('resize', relayout, { passive: true });
   document.fonts?.ready.then(relayout);
   paint();
 }

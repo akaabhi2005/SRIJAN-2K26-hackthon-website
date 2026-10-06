@@ -26,16 +26,21 @@ if (root && fx && !reduce) {
   const frame = root.closest<HTMLElement>('.frame');
   let active = false;
   const set = (on: boolean) => { if (on && !active) settle(); active = on; };
-  let queued = 0;
-  const check = () => {
-    queued = 0;
-    const rect = root.getBoundingClientRect();
-    const visible = rect.bottom > 0 && rect.top < innerHeight;
-    set(visible && (!frame || +getComputedStyle(frame).opacity > .7));
-  };
-  const requestCheck = () => { if (!queued) queued = requestAnimationFrame(check); };
-  addEventListener('scroll', requestCheck, { passive: true });
-  addEventListener('resize', requestCheck, { passive: true });
-  addEventListener('storylayoutchange', requestCheck);
-  check();
+  if (frame && getComputedStyle(frame.parentElement as Element).position === 'sticky') {
+    // pinned story: the frame is always "intersecting"; it is active when its scroll window is reached and its opacity is up
+    // (sampled in rAF: scroll-driven animations only update after the scroll event, before animation-frame callbacks)
+    const story = frame.closest<HTMLElement>('.story');
+    let q = 0;
+    const inWindow = () => {
+      if (!story) return true;
+      const F = (story.offsetHeight - (frame.parentElement as HTMLElement).offsetHeight) / 6;
+      const fi = +(frame.style.getPropertyValue('--fi') || 0);
+      return scrollY > story.getBoundingClientRect().top + scrollY + (fi + 0.1) * F;
+    };
+    const check = () => { q = 0; set(inWindow() && +getComputedStyle(frame).opacity > 0.7); };
+    addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(check); }, { passive: true });
+    check();
+  } else if ('IntersectionObserver' in window) {
+    new IntersectionObserver((es) => es.forEach((e) => set(e.isIntersecting)), { threshold: 0.35 }).observe(root);
+  }
 }

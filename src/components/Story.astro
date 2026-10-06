@@ -8,7 +8,6 @@ import '../styles/skyline.css';
 import '../styles/hero-cards-fx.css';
 import '../styles/motion-fx.css';
 import '../styles/bold.css';
-import '../styles/responsive.css';
 import paytm from '../assets/sponsors/paytm.webp';
 import xyz from '../assets/sponsors/xyz.webp';
 import macrovisionAi from '../assets/sponsors/macrovision-ai-black.webp';
@@ -130,7 +129,7 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
 
     <!-- 3 · DOMAINS -->
     <article class="frame f3" id="battlefield" style="--fi:2">
-      <div class="f-copy frame-heading"><h2 class="line display">{story.domains.line}</h2><p class="sub">{story.domains.sub}</p></div>
+      <div class="f-copy top"><h2 class="line display">{story.domains.line}</h2><p class="sub">{story.domains.sub}</p></div>
       <ul class="doms">
         {tracks.list.map((t, i) => (
           <li class="dom" data-spring style={`--j:${i}`}><div class="dom-in"><svg class="dom-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={icons[story.domains.icons[i]]}/></svg><span class="dom-tx"><strong>{t}</strong><span class="dom-l">{tracks.lines[i]}</span></span></div></li>
@@ -140,7 +139,7 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
 
     <!-- 4 · PATH -->
     <article class="frame f4" id="path" style="--fi:3">
-      <div class="f-copy frame-heading"><h2 class="line display">{story.path.line}</h2><p class="sub">{story.path.sub}</p></div>
+      <div class="f-copy top"><h2 class="line display">{story.path.line}</h2><p class="sub">{story.path.sub}</p></div>
       <ol class="steps5" data-timeline>
         <svg class="tl-svg" aria-hidden="true" focusable="false"><path class="tl-path" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         {story.path.steps.map((s, i) => {
@@ -154,7 +153,7 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
     </article>
 
     <!-- 5 · REWARD -->
-    <article class="frame f5" id="reward-story" style="--fi:4">
+    <article class="frame f5" id="reward" style="--fi:4">
       <div class="f-art reward-float">
         <svg class="a-trophy" viewBox="0 0 200 170" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Trophy">
           <ellipse class="plat" cx="100" cy="152" rx="58" ry="6"/>
