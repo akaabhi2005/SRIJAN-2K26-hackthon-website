@@ -1036,3 +1036,232 @@ html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling;
 .btn-wa-action { background: #25D366; color: #0b1410; font-weight: 800; padding: 0.65rem 1.4rem; border-radius: 12px; white-space: nowrap; box-shadow: 0 0 20px rgba(37, 211, 102, 0.35); transition: transform 180ms, background-color 180ms, box-shadow 180ms; }
 .btn-wa-action:hover { background: #20bd5a; color: #050b07; transform: scale(1.04); box-shadow: 0 0 28px rgba(37, 211, 102, 0.6); text-decoration: none; }
 .wa-color { color: #25D366 !important; }
+
+/* ───────── Cash Prizes & Rewards Section ───────── */
+.prizes-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(25, 18, 12, 0.5) 50%, var(--bg) 100%);
+  overflow: hidden;
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+
+@media (max-width: 58rem) {
+  .prizes-grid {
+    grid-template-columns: 1fr;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+}
+
+.prize-card {
+  position: relative;
+  background: rgba(18, 18, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.2rem 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.prize-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 106, 0, 0.5);
+  box-shadow: 0 20px 48px rgba(255, 106, 0, 0.25);
+}
+
+/* Winner (Featured) Center Card Styling */
+.prize-card.featured {
+  background: linear-gradient(165deg, rgba(255, 106, 0, 0.18) 0%, rgba(22, 16, 12, 0.95) 100%);
+  border: 2px solid var(--orange);
+  box-shadow: 0 0 36px rgba(255, 106, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+@media (max-width: 58rem) {
+  .prize-card.featured {
+    transform: none;
+  }
+}
+
+.prize-card.featured:hover {
+  transform: scale(1.06) translateY(-8px);
+  box-shadow: 0 0 52px rgba(255, 106, 0, 0.55);
+}
+
+.prize-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1.25rem;
+}
+
+.prize-card.featured .prize-badge {
+  background: rgba(255, 106, 0, 0.25);
+  color: #ffaa44;
+  border-color: rgba(255, 106, 0, 0.6);
+}
+
+.prize-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.prize-card.featured .prize-icon-wrap {
+  background: rgba(255, 106, 0, 0.25);
+  border-color: var(--orange);
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.45);
+}
+
+.prize-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.prize-rank {
+  font-family: var(--display);
+  font-size: 1.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.prize-pos {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--orange-hi);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.prize-suspense-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px dashed rgba(255, 106, 0, 0.6);
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffaa44;
+  letter-spacing: 0.04em;
+  animation: suspensePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes suspensePulse {
+  0%, 100% { border-color: rgba(255, 106, 0, 0.4); box-shadow: 0 0 8px rgba(255, 106, 0, 0.1); }
+  50% { border-color: rgba(255, 170, 68, 0.9); box-shadow: 0 0 20px rgba(255, 106, 0, 0.4); }
+}
+
+.prize-perks {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Suspense Note Banner */
+.prizes-suspense-banner {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 106, 0, 0.08);
+  border: 1px solid rgba(255, 106, 0, 0.3);
+  border-radius: 16px;
+  color: #ffb86c;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.suspense-sparkle {
+  font-size: 1.2rem;
+}
+
+/* PPT Mandatory Notice Box */
+.ppt-notice-box {
+  margin-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.6rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.16) 0%, rgba(18, 20, 24, 0.95) 100%);
+  border: 1px solid rgba(255, 106, 0, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 48rem) {
+  .ppt-notice-box {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.ppt-notice-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(255, 106, 0, 0.22);
+  border: 2px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff8a33;
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.45);
+}
+
+.ppt-ic {
+  width: 26px;
+  height: 26px;
+}
+
+.ppt-notice-content h4 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--orange-hi);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ppt-notice-content p {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.55;
+  font-weight: 500;
+}

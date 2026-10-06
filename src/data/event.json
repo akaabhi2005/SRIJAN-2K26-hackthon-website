@@ -181,13 +181,49 @@
     "footnote": "Detailed times coming soon"
   },
   "prizes": {
-    "total": "Rewards worth ₹1.5 Lakh+",
+    "heading": "Cash Prizes & Rewards",
+    "sub": "Compete for top positions & exciting rewards at SRIJAN 2K26!",
+    "total": "Cash Prizes & Rewards",
     "motto": [
       "Win",
       "Learn",
       "Get recognized"
     ],
-    "note": "Breakdown announced soon"
+    "cards": [
+      {
+        "id": "runner1",
+        "rank": "1st Runner Up",
+        "position": "2ND PLACE",
+        "icon": "🥈",
+        "prizeText": "Cash Prize + Trophy + Certificates",
+        "suspense": "🔒 Disclosing at Finale",
+        "tag": "Runner Up"
+      },
+      {
+        "id": "winner",
+        "rank": "Winner",
+        "position": "1ST PLACE CHAMPION",
+        "icon": "🥇",
+        "prizeText": "Grand Cash Prize + Trophy + Certificates",
+        "suspense": "🔒 Disclosing at Finale",
+        "tag": "Grand Winner",
+        "featured": true
+      },
+      {
+        "id": "runner2",
+        "rank": "2nd Runner Up",
+        "position": "3RD PLACE",
+        "icon": "🥉",
+        "prizeText": "Cash Prize + Trophy + Certificates",
+        "suspense": "🔒 Disclosing at Finale",
+        "tag": "Runner Up"
+      }
+    ],
+    "suspenseNote": "🔒 Cash Prize amounts are kept under suspense & will be revealed live on the Grand Finale stage!",
+    "pptNotice": {
+      "title": "📢 MANDATORY FOR FINALE TEAMS",
+      "text": "All teams selected for the final offline round MUST keep their presentation slides (PPT) ready before arriving for the finale round at SRMCEM Campus!"
+    }
   },
   "sponsors": {
     "heading": "Backed by",

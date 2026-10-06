@@ -167,10 +167,55 @@ const orgLogos = [
       </div>
     </section>
 
-    <!-- SCHEDULE -->
-    <section id="schedule" aria-labelledby="sch-h">
+    <!-- CASH PRIZES & REWARDS -->
+    <section id="reward" class="prizes-section" aria-labelledby="prize-h">
       <div class="wrap">
-        <p class="eyebrow" data-reveal><b>03</b> Schedule</p>
+        <p class="eyebrow" data-reveal><b>03</b> Cash Prizes & Rewards</p>
+        <h2 id="prize-h" class="display h2" data-reveal>{prizes.heading}</h2>
+        <p class="lead" data-reveal>{prizes.sub}</p>
+
+        <!-- 3 Prize Cards Grid -->
+        <div class="prizes-grid" data-stagger>
+          {prizes.cards.map((c, i) => (
+            <div class={`prize-card ${c.featured ? 'featured' : ''}`} style={`--i:${i}`}>
+              <div class="prize-badge">{c.tag}</div>
+              <div class="prize-icon-wrap">
+                <span class="prize-icon">{c.icon}</span>
+              </div>
+              <h3 class="prize-rank">{c.rank}</h3>
+              <span class="prize-pos">{c.position}</span>
+              <div class="prize-suspense-box">
+                <span class="suspense-lock">🔒</span>
+                <span class="suspense-text">{c.suspense}</span>
+              </div>
+              <p class="prize-perks">{c.prizeText}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Suspense Banner -->
+        <div class="prizes-suspense-banner" data-reveal>
+          <span class="suspense-sparkle">✨</span>
+          <p>{prizes.suspenseNote}</p>
+        </div>
+
+        <!-- Mandatory Presentation / PPT Announcement Banner -->
+        <div class="ppt-notice-box" data-reveal>
+          <div class="ppt-notice-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ppt-ic"><rect width="18" height="14" x="3" y="3" rx="2"/><path d="M7 21h10M12 17v4M8 8h8M8 12h5"/></svg>
+          </div>
+          <div class="ppt-notice-content">
+            <h4>{prizes.pptNotice.title}</h4>
+            <p>{prizes.pptNotice.text}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="alt" aria-labelledby="sch-h">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal><b>04</b> Schedule</p>
         <h2 id="sch-h" class="display h2" data-reveal>{schedule.heading}</h2>
         <div class="days-grid" data-stagger data-schedule-tabs>
           {schedule.days.map((d, i) => (
@@ -196,9 +241,9 @@ const orgLogos = [
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="alt" aria-labelledby="faq-h">
+    <section id="faq" aria-labelledby="faq-h">
       <div class="wrap">
-        <p class="eyebrow" data-reveal><b>04</b> FAQ</p>
+        <p class="eyebrow" data-reveal><b>05</b> FAQ</p>
         <h2 id="faq-h" class="display h2" data-reveal>{faq.heading}</h2>
         <div class="faq" data-stagger>
           {faq.items.map((f, i) => (
@@ -213,9 +258,9 @@ const orgLogos = [
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact" aria-labelledby="ct-h">
+    <section id="contact" class="contact alt" aria-labelledby="ct-h">
       <div class="wrap">
-        <p class="eyebrow" data-reveal><b>05</b> Join in</p>
+        <p class="eyebrow" data-reveal><b>06</b> Join in</p>
         <h2 id="ct-h" class="display" data-reveal>{contact.heading}</h2>
         <p class="lead" data-reveal data-reg-copy data-closed-text={contact.closedText}>{contact.text}</p>
         <div class="tech-quote-card" data-reveal>
