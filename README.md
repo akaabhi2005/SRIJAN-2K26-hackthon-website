@@ -31,10 +31,13 @@ The website provides participants with all important information related to the 
 
 | Detail | Information |
 |---|---|
-| **Event** | SRIJAN 2026 |
+| **Event** | SRIJAN 2K26 |
 | **Tagline** | Build. Create. Impact. |
 | **Type** | Inter-College Hackathon |
 | **Mode** | Hybrid |
+| **Registration Deadline** | 12 October 2026, 12:00 PM IST |
+| **Registration Fee** | ₹200 per team |
+| **Team Size** | 2–4 Members |
 | **Dates** | 13–14 October 2026 |
 | **Venue** | SRMCEM, Lucknow |
 | **Organized By** | CSI_SRMCEM × D’CODERS |
@@ -44,17 +47,20 @@ The website provides participants with all important information related to the 
 
 ## 🏆 Hackathon Structure
 
-### Round 1 — Screening & Shortlisting
+### Registration & Screening
+📅 **12 October 2026**
+
+Teams submit their idea by 12 Oct 12:00 PM IST. Idea screening takes place on 12 Oct.
+
+### Shortlist Announcement
 📅 **13 October 2026**
 
-Teams will be evaluated based on their proposed solution, innovation, feasibility, and technical approach.
+Shortlisted team leaders are notified via email and the official WhatsApp group. Shortlisted teams MUST keep their presentation slides (PPT) ready for the finale.
 
-Selected teams will move forward to the final round.
-
-### Round 2 — Final Hackathon
+### Round 2 — On-Campus Finale
 📅 **14 October 2026**
 
-Shortlisted teams will present and demonstrate their solutions at **SRMCEM, Lucknow**.
+Shortlisted teams present and demonstrate their working solutions at **SRMCEM, Lucknow**.
 
 Projects will be evaluated by judges and industry experts.
 
