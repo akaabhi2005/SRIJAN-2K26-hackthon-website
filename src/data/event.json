@@ -350,28 +350,27 @@
     },
     "path": {
       "line": "Register. Shortlist. Build. Finale.",
-      "sub": "Online screening 13 Oct. On-campus finale 14 Oct.",
+      "sub": "Registration closes 12 Oct 12:00 PM IST. On-campus finale 14 Oct.",
       "steps": [
         {
           "title": "Register",
           "sub": "Submit your idea",
-          "note": "Register by 12 Oct, 12:00 PM IST",
+          "note": "Closes at 12:00 PM IST",
           "day": "12"
         },
         {
-          "title": "Shortlist",
-          "sub": "12 Oct",
-          "note": "Shortlisted teams are announced",
+          "title": "Idea Screening",
+          "sub": "Best ideas shortlisted",
           "day": "12"
         },
         {
-          "title": "Online screening",
-          "sub": "13 Oct",
+          "title": "Shortlist Announced",
+          "sub": "Selected team leaders notified via email or official WhatsApp group",
           "day": "13"
         },
         {
-          "title": "On-campus finale",
-          "sub": "14 Oct · SRMCEM",
+          "title": "On-Campus Finale",
+          "sub": "SRMCEM, Lucknow",
           "day": "14"
         }
       ],
@@ -386,7 +385,7 @@
     },
     "move": {
       "line": "Your move.",
-      "sub": "Teams of 1–4. 13–14 Oct 2026. SRMCEM Lucknow, Hybrid.",
+      "sub": "Teams of 2–4. 13–14 Oct 2026. SRMCEM Lucknow, Hybrid.",
       "faq": {
         "text": "Questions?",
         "label": "See the FAQ",
@@ -399,19 +398,19 @@
     "aria": "How it works",
     "steps": [
       {
-        "title": "Register",
-        "text": "Submit your idea in the form."
+        "title": "Register, 12 Oct",
+        "text": "Submit your idea before registration closes at 12:00 PM IST."
       },
       {
-        "title": "Shortlist, 12 Oct",
-        "text": "Shortlisted teams are announced, based on the ideas submitted."
+        "title": "Idea Screening, 12 Oct",
+        "text": "Best ideas shortlisted by evaluation committee."
       },
       {
-        "title": "Online round, 13 Oct",
-        "text": "The online screening round."
+        "title": "Shortlist Announced, 13 Oct",
+        "text": "Selected team leaders notified via email or official WhatsApp group."
       },
       {
-        "title": "Finale, 14 Oct",
+        "title": "On-Campus Finale, 14 Oct",
         "text": "Present your work at SRMCEM Lucknow to the judges."
       },
       {
