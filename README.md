@@ -37,7 +37,7 @@ The website provides participants with all important information related to the 
 | **Mode** | Hybrid |
 | **Registration Deadline** | 12 October 2026, 12:00 PM IST |
 | **Registration Fee** | ₹200 per team |
-| **Team Size** | 2–4 Members |
+| **Team Size** | 1–4 Members |
 | **Dates** | 13–14 October 2026 |
 | **Venue** | SRMCEM, Lucknow |
 | **Organized By** | CSI_SRMCEM × D’CODERS |

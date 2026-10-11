@@ -61,28 +61,89 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
 
           <h1 id="hero-title" class="hero-title-sketch">
             <span class="sr">{`${ev.name} ${ev.year}`}</span>
-            <svg class="hero-title-svg" viewBox="0 0 1400 160" width="100%" height="160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SRIJAN .2K26/">
+            <svg class="hero-title-svg" viewBox="0 0 1200 230" width="100%" height="230" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SRIJAN 2K26">
               <defs>
-                <linearGradient id="refOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff5b00" />
-                  <stop offset="60%" stop-color="#ff8a33" />
-                  <stop offset="100%" stop-color="#ffb86c" />
+                <!-- Brushed Chrome / Titanium Gradient for SRIJ and N -->
+                <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="28%" stop-color="#F1F5F9" />
+                  <stop offset="50%" stop-color="#CBD5E1" />
+                  <stop offset="52%" stop-color="#94A3B8" />
+                  <stop offset="78%" stop-color="#64748B" />
+                  <stop offset="92%" stop-color="#334155" />
+                  <stop offset="100%" stop-color="#FFAA44" />
                 </linearGradient>
-                <linearGradient id="refWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" />
-                  <stop offset="100%" stop-color="#e0e6ed" />
+
+                <!-- Specular Chrome Bevel Stroke -->
+                <linearGradient id="chromeStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+                  <stop offset="50%" stop-color="#94A3B8" stop-opacity="0.4" />
+                  <stop offset="100%" stop-color="#FF8822" stop-opacity="0.6" />
                 </linearGradient>
-                <filter id="refSoftGlow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#ff5b00" flood-opacity="0.55" />
-                  <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#ff9900" flood-opacity="0.75" />
+
+                <!-- Radiant Saffron / Bhagwa Gold-Orange Gradient for 'A' -->
+                <linearGradient id="saffronGradA" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE082" />
+                  <stop offset="20%" stop-color="#FFA726" />
+                  <stop offset="50%" stop-color="#FF6F00" />
+                  <stop offset="75%" stop-color="#E65100" />
+                  <stop offset="100%" stop-color="#BF360C" />
+                </linearGradient>
+
+                <!-- Saffron Bevel Stroke -->
+                <linearGradient id="saffronStrokeA" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFF3E0" stop-opacity="0.95" />
+                  <stop offset="50%" stop-color="#FF9800" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#FF3D00" stop-opacity="0.8" />
+                </linearGradient>
+
+                <!-- Saffron Gradient for 2K26 Subtitle -->
+                <linearGradient id="saffronSubGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFB74D" />
+                  <stop offset="50%" stop-color="#FF7A00" />
+                  <stop offset="100%" stop-color="#E64A00" />
+                </linearGradient>
+
+                <!-- Left Laser Wing Gradient -->
+                <linearGradient id="laserLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FF5500" stop-opacity="0" />
+                  <stop offset="60%" stop-color="#FF7700" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#FFA033" stop-opacity="1" />
+                </linearGradient>
+
+                <!-- Right Laser Wing Gradient -->
+                <linearGradient id="laserRight" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFA033" stop-opacity="1" />
+                  <stop offset="40%" stop-color="#FF7700" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#FF5500" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Clean Crisp 3D Shadow (Zero Blurry Haze) -->
+                <filter id="cleanMetalDepth" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="4" stdDeviation="0" flood-color="#000000" flood-opacity="0.9" />
+                  <feDropShadow dx="0" dy="8" stdDeviation="4" flood-color="#000000" flood-opacity="0.8" />
                 </filter>
               </defs>
-              <g filter="url(#refSoftGlow)">
-                <text x="700" y="122" text-anchor="middle" class="ref-title-text">
-                  <tspan class="ref-white">SRIJAN</tspan>
-                  <tspan class="ref-orange"> .2K26</tspan>
-                  <tspan class="ref-slash">/</tspan>
+
+              <!-- Top Wordmark: SRIJAN (Brushed Steel + Saffron 'A') -->
+              <g filter="url(#cleanMetalDepth)">
+                <text x="600" y="132" text-anchor="middle" class="druk-title-text">
+                  <tspan fill="url(#chromeGrad)" stroke="url(#chromeStroke)" stroke-width="1.2" paint-order="stroke fill">SRIJ</tspan><tspan fill="url(#saffronGradA)" stroke="url(#saffronStrokeA)" stroke-width="1.2" paint-order="stroke fill">A</tspan><tspan fill="url(#chromeGrad)" stroke="url(#chromeStroke)" stroke-width="1.2" paint-order="stroke fill">N</tspan>
                 </text>
+              </g>
+
+              <!-- Bottom Subtitle: — 2K26 — flanked by laser wings -->
+              <g class="druk-sub-group">
+                <!-- Left Laser Wing -->
+                <polygon points="340,188 470,186 470,190" fill="url(#laserLeft)" />
+                <circle cx="472" cy="188" r="2.5" fill="#FFA033" />
+
+                <!-- 2K26 in Glowing Saffron -->
+                <text x="600" y="198" text-anchor="middle" class="druk-sub-text" fill="url(#saffronSubGrad)">2K26</text>
+
+                <!-- Right Laser Wing -->
+                <circle cx="728" cy="188" r="2.5" fill="#FFA033" />
+                <polygon points="730,186 860,188 730,190" fill="url(#laserRight)" />
               </g>
             </svg>
           </h1>

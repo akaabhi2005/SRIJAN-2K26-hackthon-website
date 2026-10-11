@@ -82,16 +82,26 @@
 }
 .ft-tag { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.12em; }
 
-/* SVG Title Typography with elegant aesthetic font */
-.ref-title-text {
-  font-family: 'Chakra Petch', 'Orbitron', 'Unbounded', 'Syne', sans-serif;
+/* Druk Wide Style Cinematic Hackathon Title */
+.druk-title-text {
+  font-family: 'Unbounded', 'Archivo Black', sans-serif;
   font-weight: 900;
-  font-size: 138px;
-  letter-spacing: -0.01em;
+  font-size: 132px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-.ref-white { fill: url(#refWhiteGrad); }
-.ref-orange { fill: url(#refOrangeGrad); }
-.ref-slash { fill: #ff6a00; font-weight: 900; opacity: 0.95; }
+
+.druk-sub-text {
+  font-family: 'Unbounded', 'Archivo Black', sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.druk-sub-group {
+  filter: drop-shadow(0 2px 8px rgba(255, 102, 0, 0.45));
+}
 
 .tagline-ref {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem 0.5rem;

@@ -21,7 +21,7 @@
     "collaborator": "GFG SRMCEM",
     "instituteLine": "An institution promoted by IITians",
     "eligibility": "Students from SRMCEM and other colleges",
-    "teamSize": "2–4 members"
+    "teamSize": "1–4 members"
   },
   "register": {
     "href": "https://forms.gle/6yS5wjADebhmvPpZA",
@@ -88,15 +88,20 @@
       },
       {
         "k": "Team size",
-        "t": "2–4 members",
-        "d": "Bring a team of 2 to 4 members."
+        "t": "1–4 members",
+        "d": "Solo warriors or teams of up to 4 members."
       },
       {
         "k": "Where",
         "t": "SRMCEM, Lucknow",
         "d": "The finale is hosted on campus in Lucknow, the City of Nawabs."
       }
-    ]
+    ],
+    "soloNotice": {
+      "badge": "SOLO WARRIORS WELCOME",
+      "title": "Don't have a team? Ride solo as a Lone Warrior!",
+      "desc": "No squad yet? Don't worry! You can participate individually as a solo warrior or assemble a squad of up to 4 members. You can also meet fellow participants and form teams in our official WhatsApp group."
+    }
   },
   "tracks": {
     "heading": "Six domains. Pick your battlefield.",
@@ -273,11 +278,11 @@
       },
       {
         "q": "How big can a team be?",
-        "a": "Teams of 2 to 4 members."
+        "a": "Solo warriors (1 member) or teams of up to 4 members."
       },
       {
         "q": "How much does it cost?",
-        "a": "₹200 per team (Team size: 2 to 4 members).",
+        "a": "₹200 per team / solo entry (Team size: 1 to 4 members).",
         "closedA": "Registration is closed. The fee was ₹200 per team."
       },
       {
@@ -367,7 +372,7 @@
     "ground": {
       "line": "Every big thing starts small.",
       "sub": [
-        "Bring a team of 2 to 4 members.",
+        "Participate solo or with a team of up to 4 members.",
         "Hosted at SRMCEM, Lucknow, the City of Nawabs."
       ],
       "alt": "Stylised city skyline at dusk, with domes, minarets, an arched gateway and modern towers"
@@ -421,7 +426,7 @@
     },
     "move": {
       "line": "Your move.",
-      "sub": "Teams of 2–4. 13–14 Oct 2026. SRMCEM Lucknow, Hybrid.",
+      "sub": "Solo or teams of 1–4. 13–14 Oct 2026. SRMCEM Lucknow, Hybrid.",
       "faq": {
         "text": "Questions?",
         "label": "See the FAQ",
@@ -464,7 +469,7 @@
     "tiers": [
       {
         "label": "Team Size",
-        "amount": "2–4 members"
+        "amount": "1–4 members"
       },
       {
         "label": "Registration Fee",

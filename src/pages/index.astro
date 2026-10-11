@@ -92,6 +92,24 @@ const orgLogos = [
             <ul class="glance" data-stagger aria-label="At a glance">
               {about.cards.map((c, i) => <li style={`--i:${i}`}><span class="k">{c.k}</span><strong>{c.t}</strong><span class="d">{c.d}</span></li>)}
             </ul>
+            {about.soloNotice && (
+              <div class="solo-notice-box" data-reveal>
+                <div class="solo-notice-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="solo-ic" aria-hidden="true">
+                    <path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                    <path d="M8.5 16c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5" />
+                  </svg>
+                </div>
+                <div class="solo-notice-content">
+                  <div class="solo-badge-row">
+                    <span class="solo-notice-badge"><span class="solo-live-dot" aria-hidden="true"></span>{about.soloNotice.badge}</span>
+                  </div>
+                  <h4>Don't have a team? Ride solo as a <span class="highlight-orange">Lone Warrior!</span></h4>
+                  <p>{about.soloNotice.desc}</p>
+                </div>
+              </div>
+            )}
           </div>
           <figure class="poster" data-reveal>
             <Img src={poster} fallbackWidth={520} widths={[360, 520, 660, 780]} sizes="(min-width: 56rem) 26rem, 90vw" width={520} height={780}
