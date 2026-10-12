@@ -52,8 +52,13 @@ const prizeTail = pi >= 0 ? prizes.total.slice(pi + prizeFig.length) : '';
       <Skyline cls="s s-hero" label={story.ground.alt} />
       <div class="in sketch-hero-container">
         <!-- TOP: Registration Countdown -->
-        <div class="hero-top-timer">
-          <RegLine live />
+        <div class="hero-timer-group">
+          <div class="hero-top-timer">
+            <RegLine live />
+          </div>
+          <p class="hero-ext-micro">
+            Extended on popular request till 13 Oct, 12:00 PM IST • Secure your spot now
+          </p>
         </div>
 
         <!-- CENTER: Main Content -->

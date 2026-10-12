@@ -8,6 +8,7 @@ import Story from '../components/Story.astro';
 import EmberBg from '../components/EmberBg.astro';
 import Motion from '../components/Motion.astro';
 import RegLine from '../components/RegLine.astro';
+import AnnouncementBanner from '../components/AnnouncementBanner.astro';
 import srmcemLogo from '../assets/logos/srmcem.webp';
 import csiLogo from '../assets/logos/csi-srmcem.webp';
 import gfgLogo from '../assets/logos/gfg-srmcem.webp';
@@ -28,6 +29,8 @@ const orgLogos = [
   <Motion />
   <a class="skip" href="#about">Skip to details</a>
   <div class="progress" aria-hidden="true"></div>
+
+  <AnnouncementBanner />
 
   <header class="top">
     <div class="wrap">
@@ -172,6 +175,12 @@ const orgLogos = [
           </ul>
         </div>
         <div class="cta" data-reveal>
+          <div class="how-ext-card">
+            <span class="hec-badge">⚡ REGISTRATION EXTENDED</span>
+            <p>
+              Extended to <strong>13 Oct, 12:00 PM IST</strong> on popular request. Secure your team's spot before final entries close.
+            </p>
+          </div>
           <p class="display yourmove">{how.cta}</p>
           <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center;">
             <a class="btn btn-primary btn-lg" data-reg-btn data-magnetic href={register.href} target="_blank" rel="noopener noreferrer" data-register>{register.label}<span class="sr"> (opens in a new tab)</span></a>

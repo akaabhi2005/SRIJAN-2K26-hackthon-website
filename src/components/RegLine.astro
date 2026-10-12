@@ -8,8 +8,9 @@ const when = `${parts.day} ${parts.month} ${parts.year}, ${parts.hour}:${parts.m
 const { cls = '', live = false } = Astro.props;
 ---
 <p class={`regline ${cls}`} data-reg-closes={closes} data-state="static" data-lead={cd.lead} data-compact={cd.compact} data-closed={cd.closed} data-units={cd.units.join(',')} {...(live ? { 'data-live': '' } : {})}>
-  <span class="rl-static">Registration closes {when}</span>
+  <span class="rl-static"><span class="rl-ext-badge">EXTENDED</span> Registration closes {when}</span>
   <span class="rl-clock" hidden aria-hidden="true">
+    <span class="rl-ext-badge">EXTENDED</span>
     <span class="rl-lead">{cd.lead}</span>
     {cd.units.map((u, i) => <>{i > 0 && <span class="rl-colon">:</span>}<span class="rl-unit"><span class="rl-num"><span class="rl-d">-</span><span class="rl-d">-</span></span><span class="rl-lbl">{u}</span></span></>)}
   </span>

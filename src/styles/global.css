@@ -1402,4 +1402,54 @@ html.lenis { scroll-behavior: auto !important; } /* Lenis owns smooth scrolling;
   font-weight: 450;
 }
 
+/* ─── How it works extension banner ─── */
+.how-ext-card {
+  max-width: 38rem;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.85rem 1.4rem;
+  background: linear-gradient(145deg, rgba(28, 18, 10, 0.9), rgba(16, 12, 10, 0.95));
+  border: 1px solid rgba(255, 106, 0, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 91, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+.how-ext-card .hec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 91, 0, 0.2);
+  border: 1px solid rgba(255, 106, 0, 0.45);
+  color: #ffb066;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.45rem;
+}
+.how-ext-card .hec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff5b00;
+  box-shadow: 0 0 8px #ff5b00;
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+.how-ext-card p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.how-ext-card p strong {
+  color: #fff;
+}
+.how-ext-card p em {
+  color: #ff9e42;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
 

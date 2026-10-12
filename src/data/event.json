@@ -287,12 +287,12 @@
       },
       {
         "q": "When does registration close?",
-        "a": "Registration closes on 12 Oct 2026 at 12:00 PM IST.",
+        "a": "Registration has been extended till 13 Oct 2026 at 12:00 PM IST on popular demand!",
         "regClose": true
       },
       {
         "q": "How are teams selected?",
-        "a": "Teams submit their idea in the registration form. Idea screening takes place on 12 Oct, and shortlisted teams are announced on 13 Oct via email or official WhatsApp group."
+        "a": "Teams submit their idea in the registration form. Idea screening takes place on 13 Oct, and shortlisted teams are announced on 13 Oct via email or official WhatsApp group."
       },
       {
         "q": "When are shortlisted teams announced?",
@@ -391,18 +391,18 @@
     },
     "path": {
       "line": "Register. Shortlist. Build. Finale.",
-      "sub": "Registration closes 12 Oct 12:00 PM IST. On-campus finale 14 Oct.",
+      "sub": "Registration extended till 13 Oct, 12:00 PM IST on popular request. On-campus finale 14 Oct.",
       "steps": [
         {
           "title": "Register",
-          "sub": "Submit your idea",
-          "note": "Closes at 12:00 PM IST",
-          "day": "12"
+          "sub": "Extended on popular request",
+          "note": "Closes 13 Oct, 12:00 PM IST",
+          "day": "13"
         },
         {
           "title": "Idea Screening",
           "sub": "Best ideas shortlisted",
-          "day": "12"
+          "day": "13"
         },
         {
           "title": "Shortlist Announced",
@@ -439,11 +439,11 @@
     "aria": "How it works",
     "steps": [
       {
-        "title": "Register, 12 Oct",
+        "title": "Register, 13 Oct (Extended)",
         "text": "Submit your idea before registration closes at 12:00 PM IST."
       },
       {
-        "title": "Idea Screening, 12 Oct",
+        "title": "Idea Screening, 13 Oct",
         "text": "Best ideas shortlisted by evaluation committee."
       },
       {
@@ -479,7 +479,7 @@
     "caption": "Event Participation Details"
   },
   "registration": {
-    "closes": "2026-10-12T12:00:00+05:30",
+    "closes": "2026-10-13T12:00:00+05:30",
     "countdown": {
       "lead": "Registration closes in",
       "compact": "Closes in",
@@ -491,5 +491,13 @@
         "Sec"
       ]
     }
+  },
+  "announcement": {
+    "active": true,
+    "badge": "REGISTRATION EXTENDED",
+    "headline": "Extended till 13 Oct, 12:00 PM IST",
+    "reason": "Extended on popular request",
+    "callToAction": "Secure your team's spot before registration closes.",
+    "closes": "13 Oct 2026, 12:00 PM IST"
   }
 }

@@ -45,7 +45,26 @@
   padding-top: clamp(1rem, 2.5vw, 2.25rem);
   min-height: min(78svh, 46rem);
 }
-.hero-top-timer { margin-top: 0.5rem; margin-bottom: 1.5rem; display: flex; justify-content: center; width: 100%; }
+.hero-timer-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+.hero-ext-micro {
+  font-family: var(--sans);
+  font-size: clamp(0.72rem, 1.6vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffaa66;
+  margin: 0;
+  text-align: center;
+  opacity: 0.92;
+}
+.hero-top-timer { margin: 0; display: flex; justify-content: center; width: 100%; }
 .hero-top-timer .regline {
   background: linear-gradient(135deg, rgba(20, 22, 28, 0.95), rgba(10, 10, 14, 0.98));
   border: 1px solid rgba(255, 91, 0, 0.45);
@@ -53,6 +72,20 @@
   border-radius: 999px;
   backdrop-filter: blur(16px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 91, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.rl-ext-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ff5b00, #ff8a00);
+  color: #050505;
+  font-weight: 900;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-right: 0.45rem;
+  box-shadow: 0 0 10px rgba(255, 91, 0, 0.45);
+  vertical-align: middle;
 }
 .hero-title-sketch { width: 100%; max-width: min(80rem, 92vw) !important; margin-inline: auto; padding-inline: clamp(1rem, 2.5vw, 2.2rem) !important; }
 .hero-title-svg { width: 100%; height: auto; display: block; margin-inline: auto; }
